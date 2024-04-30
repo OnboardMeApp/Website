@@ -192,14 +192,14 @@ h6 {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #ff0000;
+  background: #993260;
   color: #fff;
   transition: 0.3s;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 #header .subscribe .subscribe-form input[type=submit]:hover {
-  background: #f50000;
+  background: #74143F;
 }
 
 #header .subscribe .error-message {
@@ -486,7 +486,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #ff0000;
+  background: #993260;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -494,7 +494,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #ff3333;
+  background: #74143F;
 }
 
 @keyframes animate-loading {
