@@ -419,64 +419,78 @@
       </div>
     </section><!-- End Platform Features Section -->
 
-    <!-- ======= Detailed Features Section ======= -->
-    <section id="detailed-features" class="detailed-features py-5">
-      <div class="container">
+<!-- ======= Detailed Features Section ======= -->
+<section id="detailed-features" class="detailed-features py-5">
+  <div class="container">
 
-        <!-- Client Onboarding Section -->
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-6">
-            <a href="img/ClientOnboarding.png" target="_blank">
-              <img src="img/ClientOnboarding.png" class="img-fluid shadowbox" alt="Client Onboarding">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <h3>Client Onboarding</h3>
-            <p>Our platform simplifies client onboarding with intuitive, secure forms that guide clients through the process seamlessly. The integrated validation and system integrations ensure accurate data every time.</p>
-          </div>
-        </div>
-
-        <!-- Engagements and Payments Section -->
-        <div class="row align-items-center mb-5 flex-lg-row-reverse">
-          <div class="col-lg-6">
-            <a href="img/Proposal.png" target="_blank">
-              <img src="img/Proposal.png" class="img-fluid shadowbox" alt="Proposal">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <h3>Engagements and Payments</h3>
-            <p>Streamline your engagements with our efficient workflow, from creation to client approval and payment processing. Our platform supports multiple engagement acceptances, ensuring a smooth transition to onboarding.</p>
-          </div>
-        </div>
-
-        <!-- Multi-factor secured Onboarding Section -->
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-6">
-            <a href="img/Onboarding2FA.png" target="_blank">
-              <img src="img/Onboarding2FA.png" class="img-fluid shadowbox" alt="2FA Onboarding">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <h3>Multi-factor Secured Onboarding</h3>
-            <p>Enhance security with two-factor authentication (2FA) during onboarding, protecting sensitive client data at all times in an ever-evolving digital landscape.</p>
-          </div>
-        </div>
-
-        <!-- Branding Section -->
-        <div class="row align-items-center mb-5 flex-lg-row-reverse">
-          <div class="col-lg-6">
-            <a href="img/Branding.png" target="_blank">
-              <img src="img/Branding.png" class="img-fluid shadowbox" alt="Branding">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <h3>Branding</h3>
-            <p>Customize the onboarding experience to reflect your brand, providing a consistent and professional image that builds client trust and loyalty.</p>
-          </div>
-        </div>
-
+    <!-- Client Onboarding Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <a href="img/ClientOnboarding.png" target="_blank">
+          <img src="img/ClientOnboarding.png" class="img-fluid shadowbox" alt="Client Onboarding">
+        </a>
       </div>
-    </section><!-- End Detailed Features Section -->
+      <div class="col-lg-6">
+        <h3>Client Onboarding</h3>
+        <p>Our platform simplifies client onboarding with intuitive, secure forms that guide clients through the process seamlessly. The integrated validation and system integrations ensure accurate data every time.</p>
+      </div>
+    </div>
+
+    <!-- Engagements and Payments Section -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <a href="img/Proposal.png" target="_blank">
+          <img src="img/Proposal.png" class="img-fluid shadowbox" alt="Proposal">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <h3>Engagements and Payments</h3>
+        <p>Streamline your engagements with our efficient workflow, from creation to client approval and payment processing. Our platform supports multiple engagement acceptances, ensuring a smooth transition to onboarding.</p>
+      </div>
+    </div>
+
+    <!-- Ethical Letters Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <a href="img/EthicalLetter.png" target="_blank">
+          <img src="img/EthicalLetter.png" class="img-fluid shadowbox" alt="Ethical Letters">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <h3>Ethical Letters</h3>
+        <p>Simplify and streamline your Ethical Letter process with automated reminders built into your engagement and onboarding experience. Our platform ensures that your clients receive timely reminders, making the entire process seamless and efficient.</p>
+      </div>
+    </div>
+
+    <!-- Multi-factor Secured Onboarding Section -->
+    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <a href="img/Onboarding2FA.png" target="_blank">
+          <img src="img/Onboarding2FA.png" class="img-fluid shadowbox" alt="2FA Onboarding">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <h3>Multi-factor Secured Onboarding</h3>
+        <p>Enhance security with two-factor authentication (2FA) during onboarding, protecting sensitive client data at all times in an ever-evolving digital landscape.</p>
+      </div>
+    </div>
+
+    <!-- Branding Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <a href="img/Branding.png" target="_blank">
+          <img src="img/Branding.png" class="img-fluid shadowbox" alt="Branding">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <h3>Branding</h3>
+        <p>Customize the onboarding experience to reflect your brand, providing a consistent and professional image that builds client trust and loyalty.</p>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Detailed Features Section -->
+
 
     
 
@@ -676,14 +690,14 @@
       var enterprisePrice = 100;
 
       if (country === "ZAR") {
-        standardPrice *= 13;
-        enterprisePrice *= 13;
-      }
-
-      if (billingPeriod === "annual") {
-        standardPrice *= 11;
-        enterprisePrice *= 11;
-      }
+        standardPrice = 950; 
+        enterprisePrice = 2250;
+    } else {
+        if (billingPeriod === "annual") {
+            standardPrice *= 11;
+            enterprisePrice *= 11;
+        }
+    }
 
       document.getElementById("standard").querySelector(".price").innerHTML = country + " " + standardPrice.toFixed(0);
       document.getElementById("enterprise").querySelector(".price").innerHTML = country + " " + enterprisePrice.toFixed(0);
