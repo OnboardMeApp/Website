@@ -537,10 +537,11 @@
           <option value="ZAR">South Africa</option>
         </select>
         <div class="billing-toggle">
-          <input type="radio" id="monthly" name="billing" value="monthly" checked onchange="updatePricesAndCharges()">
-          <label for="monthly">Monthly</label>
-          <input type="radio" id="annual" name="billing" value="annual" onchange="updatePricesAndCharges()">
+		        <input type="radio" id="annual" name="billing" value="annual" checked onchange="updatePricesAndCharges()">
           <label for="annual">Annual</label>
+          <input type="radio" id="monthly" name="billing" value="monthly" onchange="updatePricesAndCharges()">
+          <label for="monthly">Monthly</label>
+
         </div>
         
       </div>
@@ -609,14 +610,14 @@
 <script>
   // Define base prices for monthly plans
   const basePrices = {
-    AUD: { pro: 60, expert: 125, ultimate: 250 },
+    AUD: { pro: 59, expert: 125, ultimate: 250 },
     ZAR: { pro: 950, expert: 2250, ultimate: 3500 },
   };
 
   function updatePricesAndCharges() {
-    const country = document.getElementById("country").value; // AUD or ZAR
-    const billingPeriod = document.querySelector('input[name="billing"]:checked').value; // monthly or annual
-    const prices = { ...basePrices[country] }; // Get base prices for the selected country
+    const country = document.getElementById("country").value; 
+    const billingPeriod = document.querySelector('input[name="billing"]:checked').value; 
+    const prices = { ...basePrices[country] }; 
 
     // Adjust prices for annual billing
     if (billingPeriod === "annual") {
