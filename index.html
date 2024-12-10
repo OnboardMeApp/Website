@@ -230,18 +230,23 @@
       background-color: #993260;
       color: #fff;
     }
+	
+	
     .pricing-table .pricing-options {
       display: flex;
       justify-content: space-around;
       text-align: center;
+	  align-items: stretch;
     }
     .pricing-table .pricing-options .option {
-      width: 30%;
-      padding: 20px;
-      background-color: #0000004f;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+	  display: flex;
+	  flex-direction: column;
+	  width: 30%;
+	  padding: 20px;
+	  background-color: #0000004f;
+	  border-radius: 10px;
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
     .pricing-table .pricing-options .option h3 {
       font-size: 1.5rem;
       margin-bottom: 20px;
@@ -367,6 +372,7 @@
   .custom-plan-cta .cta-button:hover {
     background-color: #d9551f;
   }
+  
   </style>
 </head>
 
@@ -409,7 +415,7 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              OnboardMe unifies these essential workflows (and more) into a single, streamlined platform. Our solution simplifies client onboarding with intuitive forms, streamlines engagement processes with built-in approvals and ethical clearances, ensures secure + timely payments while all within one integrated system.
+              OnboardMe unifies these essential workflows (and more) into a single, streamlined platform. Our solution simplifies client onboarding with intuitive forms, streamlines engagement processes with built-in approvals and ethical clearances, ensures secure + timely payments, all within one integrated system.
             </p>
             <p>
               By eliminating the need for disparate tools, OnboardMe reduces complexity, enhances client satisfaction, and empowers your firm to focus on what truly matters: delivering exceptional service.
@@ -446,7 +452,7 @@
       </div>
       <div class="col-lg-6">
         <h3>Client Onboarding and Verification</h3>
-        <p>OnboardMe simplifies client onboarding and verification with intuitive, secure forms that guide clients through the process seamlessly. The integrated validation and system integrations ensure accurate data every time.</p>
+        <p>OnboardMe simplifies client onboarding and verification with intuitive, secure forms, that guide clients through the process seamlessly. The integrated validation and system integrations ensure accurate data every time.</p>
       </div>
     </div>
 
@@ -459,7 +465,7 @@
       </div>
       <div class="col-lg-6">
         <h3>Engagements and Payments</h3>
-        <p>Streamline your engagements with our efficient workflows, from engagement creation to client approval and payment processing. OnboardMe supports multiple engagement acceptances, ensuring full compliance when engaging your clients.</p>
+        <p>Streamline your engagements with our efficient workflows. From engagement creation to client approval and payment processing. OnboardMe supports multiple engagement acceptances, ensuring full compliance when engaging your clients.</p>
       </div>
     </div>
 
@@ -472,7 +478,7 @@
       </div>
       <div class="col-lg-6">
         <h3>Ethical Clearance</h3>
-        <p>Simplify and streamline your Ethical Letter (No Profressional Objection) process with automated reminders built into your engagement and onboarding experience. OnboardMe ensures that your peers receive timely reminders and are able to upload documents to your Ethical Clearance requests, making the entire process seamless, secure and efficient.</p>
+        <p>Simplify and streamline your Ethical Letter (No Profressional Objection) process, with automated reminders built into your engagement and onboarding experience. OnboardMe ensures that your peers receive timely reminders, and are able to upload documents to your Ethical Clearance requests, making the entire process seamless, secure and efficient.</p>
       </div>
     </div>
 
@@ -544,7 +550,7 @@
           <p>25 Requests per month</p>
           <p>Client Onboarding and Engagements</p>
 		  <p>Unlimited Users</p>
-          <p class="price">$49</p>
+          <p class="price">$59</p>
           <a href="#" class="btn">Launching Soon</a>
         </div>
         <div class="option" id="mvp">
@@ -568,7 +574,7 @@
         </div>
       </div>
 	  <div id="free-month-label" style="text-align: center; margin-top: 10px; color: #fa5252; font-weight: bold;font-size:30px">
-          Get 1 month free with an annual subscription!
+          Get 1 month free with an annual subscription
         </div>
       <div class="custom-plan-cta">
         <p>Need a custom plan tailored to your specific needs?</p>
@@ -603,7 +609,7 @@
 <script>
   // Define base prices for monthly plans
   const basePrices = {
-    AUD: { pro: 49, expert: 125, ultimate: 250 },
+    AUD: { pro: 60, expert: 125, ultimate: 250 },
     ZAR: { pro: 950, expert: 2250, ultimate: 3500 },
   };
 
