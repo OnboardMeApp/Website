@@ -172,11 +172,11 @@
       background-color: #d9551f;
       transform: scale(1.1);
     }
+
     /* Pricing Table Styling */
     .pricing-table {
       margin: 50px 0;
       padding: 20px;
-      background-color: ;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
@@ -230,23 +230,27 @@
       background-color: #993260;
       color: #fff;
     }
-	
-	
+
     .pricing-table .pricing-options {
       display: flex;
       justify-content: space-around;
       text-align: center;
-	  align-items: stretch;
+      align-items: stretch;
     }
+
+    /* Make all pricing boxes the same size and align content */
     .pricing-table .pricing-options .option {
-	  display: flex;
-	  flex-direction: column;
-	  width: 30%;
-	  padding: 20px;
-	  background-color: #0000004f;
-	  border-radius: 10px;
-	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	}
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 20px;
+  background-color: #0000004f;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 300px; /* Add this line (adjust value as needed) */
+}
     .pricing-table .pricing-options .option h3 {
       font-size: 1.5rem;
       margin-bottom: 20px;
@@ -255,14 +259,14 @@
     }
     .pricing-table .pricing-options .option p {
       font-size: 1rem;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       color: white;
     }
     .pricing-table .pricing-options .option .price {
       font-size: 2rem;
       font-weight: 700;
       color: #fa5252;
-      margin-bottom: 20px;
+      margin-top: auto;
     }
     .pricing-table .pricing-options .option .btn {
       padding: 10px 20px;
@@ -277,6 +281,24 @@
     .pricing-table .pricing-options .option .btn:hover {
       background-color: #fa5252;
       transform: scale(1.05);
+    }
+
+    /* Ensure all boxes equal height */
+    .pricing-table .pricing-options {
+      align-items: stretch;
+    }
+
+    /* Make sure content inside each box is spaced and aligned */
+    .pricing-table .pricing-options .option {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    /* Push the button to the bottom of each box, ensuring alignment across all */
+    .pricing-table .pricing-options .option .btn {
+      margin-top: 10px;
     }
 
     /* FAQ Section Styling */
@@ -324,55 +346,56 @@
       font-size: 1.5rem;
       color: white;
     }
-	.transaction-charges {
-  }
-  .charges-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .charges-box {
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-  }
-  .charges-box h3 {
-    color: White;
-    margin-bottom: 15px;
-  }
-  .charges-box p {
-    margin-bottom: 10px;
-  }
-  .charge-value {
-    font-weight: bold;
-    color: #F6612A;
-  }
-  .custom-plan-cta {
-    text-align: center;
-    margin-top: 40px;
-  }
-  .custom-plan-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  .custom-plan-cta .cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #F6612A;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  .custom-plan-cta .cta-button:hover {
-    background-color: #d9551f;
-  }
-  
+
+    .transaction-charges {
+    }
+    .charges-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .charges-box {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    .charges-box h3 {
+      color: White;
+      margin-bottom: 15px;
+    }
+    .charges-box p {
+      margin-bottom: 10px;
+    }
+    .charge-value {
+      font-weight: bold;
+      color: #F6612A;
+    }
+    .custom-plan-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .custom-plan-cta p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .custom-plan-cta .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #F6612A;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .custom-plan-cta .cta-button:hover {
+      background-color: #d9551f;
+    }
+
   </style>
 </head>
 
@@ -511,7 +534,6 @@
   </div>
 </section><!-- End Detailed Features Section -->
 
-
     
 
     <!-- ======= Early Adopters Sign-Up Section ======= -->
@@ -537,11 +559,10 @@
           <option value="ZAR">South Africa</option>
         </select>
         <div class="billing-toggle">
-		        <input type="radio" id="annual" name="billing" value="annual" checked onchange="updatePricesAndCharges()">
+          <input type="radio" id="annual" name="billing" value="annual" checked onchange="updatePricesAndCharges()">
           <label for="annual">Annual</label>
           <input type="radio" id="monthly" name="billing" value="monthly" onchange="updatePricesAndCharges()">
           <label for="monthly">Monthly</label>
-
         </div>
         
       </div>
@@ -550,7 +571,7 @@
           <h3>Pro</h3>
           <p>25 Requests per month</p>
           <p>Client Onboarding and Engagements</p>
-		  <p>Unlimited Users</p>
+          <p>Unlimited Users</p>
           <p class="price">$59</p>
           <a href="#" class="btn">Launching Soon</a>
         </div>
@@ -558,8 +579,8 @@
           <h3>Expert</h3>
           <p>100 Requests per month</p>
           <p>Everything in Pro</p>
-		  <p>Multi-Currency Engagements</p>
-		  <p>Premium Branding Control</p>
+          <p>Multi-Currency Engagements</p>
+          <p>Premium Branding Control</p>
           <p class="price">$125</p>
           <a href="#" class="btn">Launching Soon</a>
         </div>
@@ -567,16 +588,16 @@
           <h3>Ultimate</h3>
           <p>200 Requests per month</p>
           <p>Everything in Expert</p>
-		  <p>Ethical Letters</p>
-		  <p>Login with Microsoft</p>
-		  <p>Client Checklists</p>
+          <p>Ethical Letters</p>
+          <p>Login with Microsoft</p>
+          <p>Client Checklists</p>
           <p class="price">$250</p>
           <a href="#" class="btn">Launching Soon</a>
         </div>
       </div>
-	  <div id="free-month-label" style="text-align: center; margin-top: 10px; color: #fa5252; font-weight: bold;font-size:30px">
+      <div id="free-month-label" style="text-align: center; margin-top: 10px; color: #fa5252; font-weight: bold;font-size:30px">
           Get 1 month free with an annual subscription
-        </div>
+      </div>
       <div class="custom-plan-cta">
         <p>Need a custom plan tailored to your specific needs?</p>
         <a href="mailto:info@onboardme.app" class="cta-button">Contact Us</a>
@@ -584,18 +605,19 @@
     </div>
   </div>
 </section><!-- End Pricing Section -->
+
 <!-- ======= Transaction Charges Section ======= -->
 <section id="transaction-charges" class="transaction-charges py-5">
   <div class="container">
     <div class="section-title text-center mb-5">
       <h1>Transaction Charges</h1>
-	  <p>We strive to keep charges as low as possible for all customers.</p>
+      <p>We strive to keep charges as low as possible for all customers.</p>
     </div>
     <div class="charges-container">
       <div id="aus-charges" class="charges-box">
         <h3>Australia / New Zealand</h3>
         <p>Credit Card (Visa/Mastercard): <span class="charge-value">2%</span> per transaction.</p>
-		 <p>Direct Debit: <span class="charge-value">1.25%</span> per transaction.</p>
+        <p>Direct Debit: <span class="charge-value">1.25%</span> per transaction.</p>
       </div>
       <div id="sa-charges" class="charges-box" style="display: none;">
         <h3>South Africa</h3>
