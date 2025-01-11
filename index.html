@@ -7,8 +7,19 @@
   <title>OnboardMe | Streamlined Client Onboarding and Engagements</title>
   <meta content="Streamlined Client Onboarding and Engagements" name="description">
   <meta content="Client Onboarding, Engagements, Payments" name="keywords">
+  
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papMzA/Ic9hq8BcERa+qVw6eMdzB+jpJjPYz2FqRWp7jVmj3D1Zo6v6b7AdMft3K0xAbHQqZmkfVZgiDxVC+Bg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+</head>
 
   <!-- Favicons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -62,7 +73,7 @@
       transform: scale(1.05);
     }
     #header {
-      padding: 60px 0;
+      padding: 30px 0;
     }
     #header .site-logo {
       margin-bottom: 20px;
@@ -395,6 +406,67 @@
     .custom-plan-cta .cta-button:hover {
       background-color: #d9551f;
     }
+	.features-banner {
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.features-banner h3 {
+    font-size: 1.5rem;
+    color: White;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.list-unstyled {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Adds spacing between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.feature-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 200px;
+    width: 100%;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    color: #993260; /* Example brand color for icons */
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: White;
+    margin: 0;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .feature-item {
+        margin-bottom: 1rem;
+        padding: 0.8rem;
+    }
+}
 
   </style>
 </head>
@@ -458,7 +530,7 @@
         </a>
       </div>
       <div class="col-lg-6">
-        <h3>Client Onboarding and Verification</h3>
+        <h3>Client Onboarding</h3>
         <p>Whether its an individual or a large family group, simple and intuitive forms guide clients through the onboarding and verification process.</p>
       </div>
     </div>
@@ -485,7 +557,7 @@
       </div>
       <div class="col-lg-6">
         <h3>Ethical Clearance (No Professional Objection)</h3>
-        <p>Automate your ethical letter process by simplifying letter creation. The prior accountant can upload documents securely and will receive follow-up reminders automatically.</p>
+        <p>Automate your ethical clearance process by simplifying letter creation. The prior accountant can upload documents securely and will receive follow-up reminders automatically.</p>
       </div>
     </div>
 
@@ -531,66 +603,128 @@
     </section><!-- End Early Adopters Sign-Up Section -->
     
 <!-- ======= Pricing Section ======= -->
-<section id="pricing" class="pricing py-5">
+<section id="pricing">
   <div class="container">
     <div class="pricing-table">
-      <div class="pricing-header">
-        <h2>Our Pricing Plans</h2>
-      </div>
-      <div class="pricing-switch">
-        <label for="country">Select Country:</label>
-        <select id="country" onchange="updatePricesAndCharges()">
-          <option value="AUD" selected>Australia</option>
-		  <option value="NZD">New Zealand</option>
-          <option value="ZAR">South Africa</option>
-        </select>
-        <div class="billing-toggle">
-          <input type="radio" id="monthly" name="billing" value="monthly" checked onchange="updatePricesAndCharges()">
-          <label for="monthly">Monthly</label>
-	  <input type="radio" id="annual" name="billing" value="annual"  onchange="updatePricesAndCharges()">
-          <label for="annual">Annual</label>
-        </div>
-        
-      </div>
-      <div class="pricing-options">
-        <div class="option" id="rockstar">
-          <h3>Pro</h3>
-          <p>40 Requests per month</p>
-          <p>Client Onboarding, Engagements</p>
-          <p>Unlimited Users</p>
-          <p class="price">$59</p>
-          <a href="#" class="btn">Launching Soon</a>
-        </div>
-        <div class="option" id="mvp">
-          <h3>Expert</h3>
-          <p>100 Requests per month</p>
-          <p>Everything in Pro</p>
-          <p>Multi-Currency Engagements</p>
-          <p>Premium Branding Control</p>
-          <p class="price">$125</p>
-          <a href="#" class="btn">Launching Soon</a>
-        </div>
-        <div class="option" id="icon">
-          <h3>Ultimate</h3>
-          <p>200 Requests per month</p>
-          <p>Everything in Expert</p>
-          <p>Ethical Letters</p>
-          <p>Login with Microsoft</p>
-          <p>Client Checklists</p>
-          <p class="price">$250</p>
-          <a href="#" class="btn">Launching Soon</a>
-        </div>
-      </div>
+      
+      <!-- 1. Enhanced Features Banner -->
+      <div class="features-banner">
+    <h3>All Plans Include:</h3>
+    <ul class="list-unstyled row justify-content-center">
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-user-check fa-2x"></i>
+            <p>Client Onboarding</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-file-contract fa-2x"></i>
+            <p>Engagements</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-sack-dollar fa-2x"></i>
+            <p>      Payments</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-thumbs-up fa-2x"></i>
+            <p>Ethical Clearance</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-list-check fa-2x"></i>
+            <p>Client Checklists</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-arrow-right-arrow-left fa-2x"></i>
+            <p>Integrations</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-users fa-2x"></i>
+            <p>Unlimited Users</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-dollar-sign fa-2x"></i>
+            <p>Multi-Currency Support</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fas fa-paint-brush fa-2x"></i>
+            <p>Custom Branding</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fab fa-microsoft fa-2x"></i>
+            <p>Login with Microsoft/Google</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fa-solid fa-people-group fa-2x"></i>
+            <p>Unlimited Clients</p>
+        </li>
+        <li class="col-md-3 col-sm-4 mb-3 feature-item">
+            <i class="fa-brands fa-aws fa-2x"></i>
+            <p>Data Hosted Onshore</p>
+        </li>
+    </ul>
+</div>
+
+
+
+  <div class="pricing-header">
+  <h2>Our Pricing Plans</h2>
+</div>
+
+<div class="pricing-switch">
+  <label for="country">Select Country:</label>
+  <select id="country" onchange="updatePricesAndCharges()">
+    <option value="AUD" selected>Australia</option>
+    <option value="NZD">New Zealand</option>
+    <option value="ZAR">South Africa</option>
+  </select>
+  <div class="billing-toggle">
+    <input type="radio" id="monthly" name="billing" value="monthly" checked onchange="updatePricesAndCharges()">
+    <label for="monthly">Monthly</label>
+    <input type="radio" id="annual" name="billing" value="annual" onchange="updatePricesAndCharges()">
+    <label for="annual">Annual</label>
+    <input type="radio" id="quarterly" name="billing" value="quarterly" onchange="updatePricesAndCharges()">
+    <label for="quarterly">Bundle</label>
+  </div>
+</div>
+
+<div class="pricing-options">
+
+  <!-- Pro Plan -->
+  <div class="option" id="rockstar">
+    <h3>Pro</h3>
+    <p class="requests">50 Requests per month</p>
+    <p class="price">$99</p>
+    <a href="#" class="btn">Launching Soon</a>
+  </div>
+  <!-- Expert Plan -->
+  <div class="option" id="mvp">
+    <h3>Expert</h3>
+    <p class="requests">150 Requests per month</p>
+    <p class="price">$199</p>
+    <a href="#" class="btn">Launching Soon</a>
+  </div>
+  <!-- Ultimate Plan -->
+  <div class="option" id="icon">
+    <h3>Ultimate</h3>
+    <p class="requests">300 Requests per month</p>
+    <p class="price">$299</p>
+    <a href="#" class="btn">Launching Soon</a>
+  </div>
+
+</div>
+
+
       <div id="free-month-label" style="text-align: center; margin-top: 10px; color: #fa5252; font-weight: bold;font-size:30px">
-          Get 1 month free with an annual subscription
+        Get 1 month free with an annual subscription
       </div>
+      
       <div class="custom-plan-cta">
         <p>Need a custom plan tailored to your specific needs?</p>
         <a href="mailto:info@onboardme.app" class="cta-button">Contact Us</a>
       </div>
     </div>
   </div>
-</section><!-- End Pricing Section -->
+</section>
+<!-- End Pricing Section -->
+
 
 <!-- ======= Transaction Charges Section ======= -->
 <section id="transaction-charges" class="transaction-charges py-5">
@@ -623,50 +757,86 @@
 
 <!-- Pricing Script -->
 <script>
-  // Define base prices for monthly plans
-  const basePrices = {
-    AUD: { pro: 69, expert: 149, ultimate: 299 },
-	NZD: { pro: 79, expert: 169, ultimate: 329 },
-    ZAR: { pro: 950, expert: 1950, ultimate: 3500 },
-  };
+// Define base prices for monthly plans
+const basePrices = {
+  AUD: { pro: 99, expert: 199, ultimate: 299 },
+  NZD: { pro: 109, expert: 199, ultimate: 329 },
+  ZAR: { pro: 950, expert: 1950, ultimate: 3500 },
+};
 
-  function updatePricesAndCharges() {
-    const country = document.getElementById("country").value; 
-    const billingPeriod = document.querySelector('input[name="billing"]:checked').value; 
-    const prices = { ...basePrices[country] }; 
+// Define requests per plan per month
+const requestsPerPlan = {
+  pro: 50,
+  expert: 150,
+  ultimate: 300,
+};
 
-    // Adjust prices for annual billing
-    if (billingPeriod === "annual") {
-      prices.pro *= 11;
-      prices.expert *= 11;
-      prices.ultimate *= 11;
-    }
+function updatePricesAndCharges() {
+  const country = document.getElementById("country").value; 
+  const billingPeriod = document.querySelector('input[name="billing"]:checked').value; 
+  const prices = { ...basePrices[country] }; 
+  const requests = { ...requestsPerPlan }; // Base monthly requests
 
-    // Update pricing display
-    document.getElementById("rockstar").querySelector(".price").innerHTML = country + " " + prices.pro.toFixed(0);
-    document.getElementById("mvp").querySelector(".price").innerHTML = country + " " + prices.expert.toFixed(0);
-    document.getElementById("icon").querySelector(".price").innerHTML = country + " " + prices.ultimate.toFixed(0);
+  let requestDisplaySuffix = "requests per month"; // Default display suffix
 
-    // Update transaction charges display
-    if (country === "ZAR") {
-      document.getElementById("aus-charges").style.display = "none";
-      document.getElementById("sa-charges").style.display = "block";
-    } else {
-      document.getElementById("aus-charges").style.display = "block";
-      document.getElementById("sa-charges").style.display = "none";
-    }
+  // Adjust prices and requests for annual billing
+  if (billingPeriod === "annual") {
+    prices.pro *= 11;
+    prices.expert *= 11;
+    prices.ultimate *= 11;
   }
 
-  // Initialize prices and charges on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    updatePricesAndCharges();
-  });
+  // Adjust prices and requests for quarterly billing (Bundle)
+  if (billingPeriod === "quarterly") {
+    prices.pro *= 3;
+    prices.expert *= 3;
+    prices.ultimate *= 3;
 
-  // Add event listeners for changes
-  document.getElementById("country").addEventListener("change", updatePricesAndCharges);
-  document.querySelectorAll('input[name="billing"]').forEach((radio) =>
-    radio.addEventListener("change", updatePricesAndCharges)
-  );
+    // Bundle gives 3 months worth of requests upfront
+    requests.pro *= 3;
+    requests.expert *= 3;
+    requests.ultimate *= 3;
+
+    requestDisplaySuffix = "requests per quarter"; // Update display suffix for Bundle
+  }
+
+  // Update pricing display
+  document.getElementById("rockstar").querySelector(".price").innerHTML = 
+    country + " " + prices.pro.toFixed(0);
+  document.getElementById("mvp").querySelector(".price").innerHTML = 
+    country + " " + prices.expert.toFixed(0);
+  document.getElementById("icon").querySelector(".price").innerHTML = 
+    country + " " + prices.ultimate.toFixed(0);
+
+  // Update requests display
+  document.getElementById("rockstar").querySelector(".requests").innerHTML = 
+    requests.pro + " " + requestDisplaySuffix;
+  document.getElementById("mvp").querySelector(".requests").innerHTML = 
+    requests.expert + " " + requestDisplaySuffix;
+  document.getElementById("icon").querySelector(".requests").innerHTML = 
+    requests.ultimate + " " + requestDisplaySuffix;
+
+  // Update transaction charges display
+  if (country === "ZAR") {
+    document.getElementById("aus-charges").style.display = "none";
+    document.getElementById("sa-charges").style.display = "block";
+  } else {
+    document.getElementById("aus-charges").style.display = "block";
+    document.getElementById("sa-charges").style.display = "none";
+  }
+}
+
+// Initialize prices and charges on page load
+document.addEventListener("DOMContentLoaded", () => {
+  updatePricesAndCharges();
+});
+
+// Add event listeners for changes
+document.getElementById("country").addEventListener("change", updatePricesAndCharges);
+document.querySelectorAll('input[name="billing"]').forEach((radio) =>
+  radio.addEventListener("change", updatePricesAndCharges)
+);
+
 </script>
 
 </body>
