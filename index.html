@@ -735,14 +735,18 @@
     </div>
     <div class="charges-container">
       <div id="aus-charges" >
-        <h3>Australia / New Zealand</h3>
-        <p>Credit Card (Visa/Mastercard): <span class="charge-value">2%</span> per transaction.</p>
+        <h3>Australia</h3>
+        <p>Credit Card (Visa/Mastercard): <span class="charge-value">1.95% </span> + A$0.30 per transaction.</p>
         <p>Direct Debit: <span class="charge-value">1.25%</span> per transaction.</p>
+      </div>
+	  <div id="nz-charges" class="charges-box" style="display: none;" >
+	  <h3>New Zealand</h3>
+        <p>Credit Card (Visa/Mastercard): <span class="charge-value">2.9%</span> + NZ$0.30 per transaction.</p>
       </div>
       <div id="sa-charges" class="charges-box" style="display: none;">
         <h3>South Africa</h3>
-        <p>Credit Card (Visa/Mastercard): <span class="charge-value">3.25%</span> per transaction.</p>
-        <p>Direct Debit: <span class="charge-value">1.25%</span> per Debit Order.</p>
+        <p>Credit Card (Visa/Mastercard): <span class="charge-value">3.25%</span> + R1.00 per transaction.</p>
+        <p>Direct Debit: <span class="charge-value">R3.00</span> per Debit Order.</p>
       </div>
     </div>
   </div>
@@ -760,8 +764,8 @@
 // Define base prices for monthly plans
 const basePrices = {
   AUD: { pro: 99, expert: 199, ultimate: 299 },
-  NZD: { pro: 109, expert: 199, ultimate: 329 },
-  ZAR: { pro: 950, expert: 1950, ultimate: 3500 },
+  NZD: { pro: 109, expert: 219, ultimate: 329 },
+  ZAR: { pro: 999, expert: 1999, ultimate: 2999 },
 };
 
 // Define requests per plan per month
@@ -817,25 +821,25 @@ function updatePricesAndCharges() {
     requests.ultimate + " " + requestDisplaySuffix;
 
   // Update transaction charges display
+  const ausCharges = document.getElementById("aus-charges");
+  const nzCharges = document.getElementById("nz-charges");
+  const saCharges = document.getElementById("sa-charges");
+
   if (country === "ZAR") {
-    document.getElementById("aus-charges").style.display = "none";
-    document.getElementById("sa-charges").style.display = "block";
+    ausCharges.style.display = "none";
+    nzCharges.style.display = "none";
+    saCharges.style.display = "block";
+  } else if (country === "NZD") {
+    ausCharges.style.display = "none";
+    nzCharges.style.display = "block";
+    saCharges.style.display = "none";
   } else {
-    document.getElementById("aus-charges").style.display = "block";
-    document.getElementById("sa-charges").style.display = "none";
+    ausCharges.style.display = "block";
+    nzCharges.style.display = "none";
+    saCharges.style.display = "none";
   }
 }
 
-// Initialize prices and charges on page load
-document.addEventListener("DOMContentLoaded", () => {
-  updatePricesAndCharges();
-});
-
-// Add event listeners for changes
-document.getElementById("country").addEventListener("change", updatePricesAndCharges);
-document.querySelectorAll('input[name="billing"]').forEach((radio) =>
-  radio.addEventListener("change", updatePricesAndCharges)
-);
 
 </script>
 
