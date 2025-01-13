@@ -507,7 +507,6 @@
               <li><i class="bi bi-check-circle-fill"></i> Consumption based banded pricing </li>
               <li><i class="bi bi-check-circle-fill"></i> Integration to Practice Management Systems</li>
               <li><i class="bi bi-check-circle-fill"></i> Built with ease of use in mind</li>
-              <li><i class="bi bi-check-circle-fill"></i> Data securely hosted onshore using AWS</li>
             </ul>
           </div>
         </div>
@@ -690,9 +689,15 @@
 <div class="pricing-options">
 
   <!-- Pro Plan -->
+    <div class="option" id="starter">
+    <h3>Starter</h3>
+    <p class="requests">30 Requests per month</p>
+    <p class="price">$59</p>
+    <a href="#" class="btn">Launching Soon</a>
+  </div>
   <div class="option" id="rockstar">
     <h3>Pro</h3>
-    <p class="requests">50 Requests per month</p>
+    <p class="requests">70 Requests per month</p>
     <p class="price">$99</p>
     <a href="#" class="btn">Launching Soon</a>
   </div>
@@ -768,14 +773,15 @@
 <script>
 // Define base prices for monthly plans
 const basePrices = {
-  AUD: { pro: 99, expert: 199, ultimate: 299 },
-  NZD: { pro: 109, expert: 219, ultimate: 329 },
-  ZAR: { pro: 999, expert: 1999, ultimate: 2999 },
+  AUD: { starter:59, pro: 99, expert: 199, ultimate: 299 },
+  NZD: { starter:69, pro: 109, expert: 219, ultimate: 329 },
+  ZAR: { starter:599, pro: 999, expert: 1999, ultimate: 2999 },
 };
 
 // Define requests per plan per month
 const requestsPerPlan = {
-  pro: 50,
+  starter: 30,
+  pro: 70,
   expert: 150,
   ultimate: 300,
 };
@@ -790,19 +796,22 @@ function updatePricesAndCharges() {
 
   // Adjust prices and requests for annual billing
   if (billingPeriod === "annual") {
-    prices.pro *= 11;
+    prices.starter *= 11;
+	prices.pro *= 11;
     prices.expert *= 11;
     prices.ultimate *= 11;
   }
 
   // Adjust prices and requests for quarterly billing (Bundle)
   if (billingPeriod === "quarterly") {
-    prices.pro *= 3;
+    prices.starter *= 3;
+	prices.pro *= 3;
     prices.expert *= 3;
     prices.ultimate *= 3;
 
     // Bundle gives 3 months worth of requests upfront
-    requests.pro *= 3;
+    requests.starter *= 3;
+	requests.pro *= 3;
     requests.expert *= 3;
     requests.ultimate *= 3;
 
@@ -810,6 +819,8 @@ function updatePricesAndCharges() {
   }
 
   // Update pricing display
+  document.getElementById("starter").querySelector(".price").innerHTML = 
+    country + " " + prices.starter.toFixed(0);
   document.getElementById("rockstar").querySelector(".price").innerHTML = 
     country + " " + prices.pro.toFixed(0);
   document.getElementById("mvp").querySelector(".price").innerHTML = 
@@ -818,6 +829,8 @@ function updatePricesAndCharges() {
     country + " " + prices.ultimate.toFixed(0);
 
   // Update requests display
+  document.getElementById("starter").querySelector(".requests").innerHTML = 
+    requests.starter + " " + requestDisplaySuffix;
   document.getElementById("rockstar").querySelector(".requests").innerHTML = 
     requests.pro + " " + requestDisplaySuffix;
   document.getElementById("mvp").querySelector(".requests").innerHTML = 
