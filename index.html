@@ -80,7 +80,7 @@
     #header {
     }
     #header .site-logo {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     #header h1 {
       font-size: 2.5rem;
@@ -281,16 +281,25 @@
       font-weight: 700;
       color: #fa5252;
     }
-    .pricing-table .pricing-options .option .btn {
-      padding: 10px 20px;
-      background-color: #993260;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s, transform 0.3s;
-    }
+.pricing-table .pricing-options .option .btn,
+#hero .btn {
+  padding: 10px 20px;
+  background-color: #993260;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Shared hover effect */
+.pricing-table .pricing-options .option .btn:hover,
+#hero .btn:hover {
+  background-color: #fa5252;
+  transform: scale(1.05);
+}
+	
     .pricing-table .pricing-options .option .btn:hover {
       background-color: #fa5252;
       transform: scale(1.05);
@@ -482,6 +491,59 @@
     }
 }
 
+    .text-gradient{background:linear-gradient(135deg,#8e2de2,#ff6a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+    @media (prefers-reduced-motion:no-preference){
+      #hero .text-gradient{animation:hue-shift 6s ease-in-out infinite alternate}
+      @keyframes hue-shift{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(20deg)}}
+
+.py-5 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+#header {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+#header .site-logo {            
+  margin-bottom: 0 !important;  
+}
+
+#hero .list-unstyled {             
+  /* centre the whole block */
+  margin-left: auto;
+  margin-right: auto;
+  align-items: flex-start !important;  
+  width: max-content;   /* modern browsers */
+}
+#hero .list-unstyled li {
+  text-align: left;
+}
+#hero h1 {
+  margin-bottom: 2rem;
+  }
+  
+.gradient-heading {
+  background: linear-gradient(135deg, #993260,#F6612A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+}
+
+/* optional: reuse the hero’s hue‑shift animation */
+@media (prefers-reduced-motion: no-preference) {
+  .gradient-heading {
+    animation: hue-shift 6s ease-in-out infinite alternate;
+  }
+}
+
+/* Make the check‑circle icons OnboardMe orange */
+#hero .list-unstyled li i { color:#993260 !important; }
+
+
   </style>
 </head>
 
@@ -491,39 +553,58 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center text-center">
       <a class="site-logo mb-4" href="index-slides.html">
-        <img src="assets/img/OM_Logo.png" alt="Homepage" height="100">
+        <img src="assets/img/OM_Logo.png" alt="Homepage" height="200">
       </a>
-
-
-
-      
     </div>
   </header><!-- End #header -->
 
   <main id="main">
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about py-5">
+ <!-- ======= Hero Section (single full‑width column) ======= -->
+    <section id="hero" class="py-5 overflow-hidden">
       <div class="container">
-        <div class="row content text">
-          <div class="col-lg-6 mb-4">
-            <h2>Engagements, Payments & Client Onboarding for Professional Services firms.</h2>
-       
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Struggling with complex client onboarding, scattered approvals, and payment delays? OnboardMe takes the hassle out of it all with simple forms, intuitive engagement workflows, built-in ethical clearances, and secure, timely payments—all in one effortless, integrated solution.
-            </p>
-            
-            <ul class="list-unstyled mt-3">
-              <li><i class="bi bi-check-circle-fill"></i> Consumption based banded pricing </li>
-              <li><i class="bi bi-check-circle-fill"></i> Integration to Practice Management Systems</li>
-              <li><i class="bi bi-check-circle-fill"></i> Built with ease of use in mind</li>
+        <div class="row">
+          <div class="col-12">
+
+            <h1 class="display-3 fw-bold lh-1 text-center mb-5">
+			  Focus on what matters with effortless
+			  <span class="text-gradient">Engagements,</span>
+			  <span class="text-gradient">Payments</span> &amp;
+			  <span class="text-gradient">Onboarding</span>
+			</h1>
+
+			<p class="lead mt-3 text-center">
+			  Automate engagements, onboarding and billing in one place—so your team can focus on what really matters.
+			</p>
+
+            <ul class="list-unstyled mt-4 d-flex flex-column align-items-start">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                Consumption‑based banded pricing
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                Integrates with your practice‑management stack
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                Built for speed and ease of use
+              </li>
             </ul>
+
+            <div class="text-center">
+  <a href="http://eepurl.com/iRkX5A"
+     class="cta-button mt-4"
+     target="_blank">
+    Sign Up Now
+  </a>
+</div>
+
           </div>
         </div>
       </div>
-    </section><!-- End About Us Section -->
+    </section><!-- End Hero Section -->
+
 
     <!-- ======= Platform Features Section ======= -->
     
@@ -543,7 +624,7 @@
         </a>
       </div>
       <div class="col-lg-6">
-        <h3>Client Onboarding</h3>
+        <h3 class="gradient-heading fs-2 fs-md-2">Client Onboarding</h3>
         <p>Whether its an individual or a large family group, simple and intuitive forms guide clients through the onboarding and verification process.</p>
       </div>
     </div>
@@ -556,7 +637,7 @@
 		</a>
 	  </div>
 	  <div class="col-lg-6">
-		<h3>Engagements</h3>
+		<h3 class="gradient-heading fs-2 fs-md-3">Engagements</h3>
 		<p>Streamline your engagement creation and approval process with our intuitive tools, ensuring full compliance and enhanced communication with your clients.</p>
 	  </div>
 	</div>
@@ -569,7 +650,7 @@
 		</a>
 	  </div>
 	  <div class="col-lg-6">
-		<h3>Payments</h3>
+		<h3 class="gradient-heading">Payments</h3>
 		<p>Experience secure, timely payment processing with multiple payment options, ensuring a smooth transaction every time.</p>
 	  </div>
 	</div>
@@ -582,8 +663,8 @@
         </a>
       </div>
       <div class="col-lg-6">
-        <h3>Ethical Clearance (No Professional Objection)</h3>
-        <p>Automate your ethical clearance process by simplifying letter creation. The prior accountant can upload documents securely and will receive follow-up reminders automatically.</p>
+        <h3 class="gradient-heading">Ethical Letter (No Professional Objection)</h3>
+        <p>Automate your ethical letter process by simplifying letter creation. The prior accountant can upload documents securely and will receive follow-up reminders automatically.</p>
       </div>
     </div>
 
@@ -595,7 +676,7 @@
         </a>
       </div>
       <div class="col-lg-6">
-        <h3>Security made simple </h3>
+        <h3 class="gradient-heading">Security made simple</h3>
         <p>Mandatory SMS-based two-factor authentication secures client onboarding, while platform users benefit from Single Sign-On and authenticator app-based 2FA, to protect sensitive data at all times.</p>
       </div>
     </div>
@@ -608,8 +689,8 @@
         </a>
       </div>
       <div class="col-lg-6">
-        <h3>Make it your own </h3>
-        <p>Tailor the onboarding, engagement, and ethical clearance experience, to showcase your brand with personalized logos and custom button colors.</p>
+        <h3 class="gradient-heading">Make it your own</h3>
+        <p>Tailor the onboarding, engagement, and ethical letter experience, to showcase your brand with personalized logos and custom button colors.</p>
       </div>
     </div>
 
@@ -651,7 +732,7 @@
         </li>
         <li class="col-md-3 col-sm-4 mb-3 feature-item">
             <i class="fas fa-thumbs-up fa-2x"></i>
-            <p>Ethical Clearance</p>
+            <p>Ethical Letters</p>
         </li>
         <li class="col-md-3 col-sm-4 mb-3 feature-item">
             <i class="fas fa-list-check fa-2x"></i>
@@ -748,7 +829,7 @@
 </div>
 
 	  <div class="custom-plan-cta" >
-        <p>What is a request? A request is an Engagement, Client Onboarding or Ethical Clearance sent from OnboardMe.</p>
+        <p>What is a request? A request is an Engagement, Client Onboarding or Ethical Letter sent from OnboardMe.</p>
       </div>
       <div id="free-month-label" style="text-align: center; margin-top: 10px; color: #fa5252; font-weight: bold;font-size:30px">
         Get 1 month free with an annual subscription
