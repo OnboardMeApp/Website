@@ -557,7 +557,12 @@ document.querySelectorAll('.integration-card').forEach(card => {
 /* ----------------- image modal (unchanged) ------------------- */
 document.querySelectorAll('a.open-image').forEach(anchor => {
   anchor.addEventListener('click', e => {
-    e.preventDefault();
+    e.preventDefault();                       // ⬅ stop navigation for everyone
+
+    /* Mobile (≤ 575 px) → do nothing else */
+    if (window.innerWidth <= 575) return;
+
+    /* Desktop / tablet → show the modal */
     document.getElementById('modalImage').src = anchor.href;
     new bootstrap.Modal(document.getElementById('imageModal')).show();
   });
