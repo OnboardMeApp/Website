@@ -1,0 +1,520 @@
+<style>
+   /* ======================================================
+   GLOBAL & SHARED STYLES
+   ====================================================== */
+
+/* ---------- General ---------- */
+#modalImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+.shadowbox {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* ---------- Lists & Icons ---------- */
+.list-unstyled,
+.list-unstyled-new {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list-unstyled li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.list-unstyled li i {
+  margin-right: 10px;
+  color: #F6612A;
+}
+
+.list-unstyled li i.bi {
+  font-size: 1.2em;
+}
+
+/* ---------- CTA Button ---------- */
+.cta-button,
+.pricing-table .pricing-options .option .btn,
+#hero .btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #F6612A;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover,
+.pricing-table .pricing-options .option .btn:hover,
+#hero .btn:hover {
+  background-color: #fa5252;
+  transform: scale(1.05);
+}
+
+/* ---------- Header & Site Logo ---------- */
+#header { }
+#header .site-logo   { margin-bottom: 10px; }
+#header h1           { font-size: 2.5rem; font-weight: 700; }
+#header h2           { font-size: 1.25rem; font-weight: 400; color: #666; }
+
+/* ---------- Countdown ---------- */
+.countdown div {
+  margin: 0 10px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.countdown h3 { font-size: 2.5rem; font-weight: 700; color:#F6612A; }
+.countdown h4 { font-size: 1rem;   font-weight: 600; color:#fff;      }
+
+/* ---------- Social Links ---------- */
+.social-links i {
+  font-size: 1.5rem;
+  color: #F6612A;
+  transition: color 0.3s;
+  margin: 0 10px;
+}
+.social-links i:hover { color:#d9551f; }
+
+/* ---------- Section Title ---------- */
+.section-title h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ---------- Feature Boxes ---------- */
+.feature-box i   { font-size:48px; color:#fa5252; margin-bottom:10px; }
+.feature-box h3  { font-size:1.5rem; font-weight:700; margin-bottom:10px; }
+.feature-box p   { font-size:1rem;  font-weight:400; color:white; }
+
+/* ---------- Detailed Features ---------- */
+#detailed-features img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+#detailed-features img:hover { transform: scale(1.05); }
+
+/* ---------- Contact ---------- */
+#contact .info i  { font-size:2rem; color:#F6612A; margin-bottom:10px; }
+#contact .info h4 { font-size:1.25rem; font-weight:700; }
+
+/* ---------- Footer ---------- */
+#footer            { background-color:#333; color:#fff; }
+#footer .copyright { margin-top:10px; font-size:1rem; font-weight:400; }
+
+/* ---------- Back-to-Top ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #F6612A;
+  color:#fff;
+  padding:10px 15px;
+  border-radius:50%;
+  transition: background-color .3s, transform .3s;
+}
+.back-to-top:hover { background-color:#d9551f; transform:scale(1.1); }
+
+/* ======================================================
+   PRICING TABLE
+   ====================================================== */
+.pricing-table {
+  margin: 50px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.pricing-table .pricing-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.pricing-table .pricing-header h2 { font-size:2.25rem; font-weight:700; }
+
+/* --- Billing Switcher --- */
+.pricing-switch            { text-align:center; margin-bottom:30px; }
+.pricing-switch select {
+  padding:10px;
+  font-size:1rem;
+  border-radius:5px;
+  margin-right:20px;
+  outline:none;
+  background-color:#fff;
+  color:#333;
+  transition:border-color .3s;
+}
+.pricing-switch select:focus { border-color:#d9551f; }
+
+.pricing-switch .billing-toggle      { display:inline-flex; align-items:center; margin-right:10px; }
+.pricing-switch .billing-toggle label{ font-size:1rem; cursor:pointer; margin-right:10px; }
+
+.pricing-switch input[type="radio"]          { display:none; }
+.pricing-switch input[type="radio"] + label {
+  padding:10px 20px;
+  border-radius:5px;
+  background-color:#fff;
+  color:#333;
+  cursor:pointer;
+  transition:background-color .3s, border-color .3s;
+}
+.pricing-switch input[type="radio"]:checked + label {
+  background-color:#993260;
+  color:#fff;
+}
+
+/* --- Pricing Options (merged duplicate) --- */
+.pricing-table .pricing-options {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: stretch;
+}
+
+.pricing-table .pricing-options .option {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 20px;
+  background-color: #0000004f;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pricing-table .pricing-options .option h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color:white;
+  font-weight:bold;
+}
+
+.pricing-table .pricing-options .option p {
+  font-size:1rem;
+  margin-bottom:10px;
+  color:white;
+}
+
+.pricing-table .pricing-options .option .price {
+  font-size:2rem;
+  font-weight:700;
+  color:#fa5252;
+}
+
+/* ======================================================
+   FAQ SECTION
+   ====================================================== */
+#faq {
+  background-color:#8b2d6521;
+  padding:30px 0;
+}
+
+#faq .faq-title       { text-align:center; margin-bottom:40px; }
+#faq .faq-title h2    { font-size:3rem; font-weight:700; }
+
+#faq .faq-list        { max-width:1000px; margin:0 auto; }
+#faq .faq-list h3 {
+  font-size:2rem;
+  font-weight:600;
+  margin-bottom:10px;
+  cursor:pointer;
+  position:relative;
+  padding-right:20px;
+}
+#faq .faq-list h3::after {
+  content:'+';
+  position:absolute;
+  right:0;
+  top:0;
+  font-size:1.5rem;
+  transition:transform .3s;
+}
+#faq .faq-list h3.active::after { transform:rotate(45deg); }
+
+#faq .faq-list .faq-answer      { display:none; margin:10px 0 30px; }
+#faq .faq-list .faq-answer p    { font-size:1.5rem; color:white; }
+
+/* ======================================================
+   TRANSACTION CHARGES
+   ====================================================== */
+.transaction-charges { }
+.charges-container   { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; }
+
+.charges-box {
+  border-radius:10px;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+  padding:20px;
+  text-align:center;
+  width:100%;
+  max-width:600px;
+}
+.charges-box h3     { color:white; margin-bottom:15px; }
+.charges-box p      { margin-bottom:10px; }
+.charge-value       { font-weight:bold; color:#F6612A; }
+
+.custom-plan-cta          { text-align:center; margin-top:40px; }
+.custom-plan-cta p        { font-size:1.2rem; margin-bottom:20px; }
+.custom-plan-cta .cta-button:hover { background-color:#d9551f; }
+
+/* ======================================================
+   FEATURES BANNER
+   ====================================================== */
+.features-banner {
+  border-radius:12px;
+  padding:2rem;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom:2rem;
+  max-width:1280px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+.features-banner h3 {
+  font-size:1.5rem;
+  color:white;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+
+.feature-item{
+  border:1px solid #ddd;
+  border-radius:5px;
+  padding:2rem;
+  text-align:center;
+  transition:transform .2s, box-shadow .2s;
+  max-width:250px;
+  margin:0 .75rem;       /* 0.75 rem gap left & right */
+  box-sizing:border-box; /* so padding+border stay inside 200 px */
+}
+
+/* Optional: make them full-width only on very small screens */
+@media (max-width: 575.98px) {
+  .feature-item { width: 100%; }
+}
+.feature-item:hover {
+  transform:scale(1.05);
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.feature-item i      { color:#993260; margin-bottom:.5rem; display:block; }
+.feature-item p      { font-size:1rem; font-weight:500; color:white; margin:0; }
+
+@media (max-width:768px) {
+  .feature-item { margin-bottom:1rem; padding:.8rem; }
+}
+
+/* ======================================================
+   TYPOGRAPHY & GRADIENT TEXT
+   ====================================================== */
+.text-gradient {
+  background:linear-gradient(100deg,#993260,#F6612A);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  #hero .text-gradient {
+    animation:hue-shift 6s ease-in-out infinite alternate;
+  }
+  @keyframes hue-shift {
+    from { filter:hue-rotate(0deg); }
+    to   { filter:hue-rotate(20deg); }
+  }
+}
+
+.gradient-heading {
+  background:linear-gradient(135deg,#993260,#F6612A);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  color:transparent;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .gradient-heading { animation:hue-shift 6s ease-in-out infinite alternate; }
+}
+
+/* ======================================================
+   HERO / HEADER UTILITIES
+   ====================================================== */
+.py-5 { padding-top:2rem!important; padding-bottom:2rem!important; }
+
+#header { padding-top:1rem!important; padding-bottom:1rem!important; }
+#header .site-logo { margin-bottom:0!important; }
+
+#hero .list-unstyled {
+  margin-left:auto;
+  margin-right:auto;
+  align-items:flex-start!important;
+  width:max-content;
+}
+#hero .list-unstyled li { text-align:left; }
+#hero h1 { margin-bottom:2rem; }
+
+/* Make hero check icons OnboardMe orange */
+#hero .list-unstyled li i { color:#993260!important; }
+
+/* ======================================================
+   INTEGRATIONS SECTION
+   ====================================================== */
+#integrations {
+  background:#8b2d6521;
+  padding:30px 0;
+}
+
+/* --- Integration Card (merged duplicates) --- */
+.integration-card {
+  background:#0000004f;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+  text-align:center;
+  padding:30px 20px;
+  transition:transform .3s;
+  height:100%;
+  position:relative;
+  cursor:pointer;
+}
+.integration-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 6px 12px rgba(0,0,0,.18);
+}
+
+.integration-card i,
+.integration-card img {
+  font-size:48px;
+  max-width:100px;
+  color:#993260;
+  margin-bottom:15px;
+}
+.integration-card h4 { color:#fff; font-weight:700; margin-bottom:.25rem; }
+.integration-card p  { color:#fff; opacity:.85; font-size:.95rem; line-height:1.4; }
+
+.integration-card img {
+  height: 96px;         /* every logo now sits 96 px tall */
+  width: auto;          /* keep aspect-ratio; width expands/shrinks as needed */
+  object-fit: contain;  /* scales down tall logos so nothing is cropped */
+  display: block;       /* removes inline-element whitespace */
+  margin: 0 auto 15px;  /* centres the logo and preserves the original gap */
+}
+
+/* Badge (merged duplicate) */
+.badge-comingsoon {
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#fa5252;
+  color:#fff;
+  font-size:.7rem;
+  font-weight:700;
+  padding:2px 6px;
+  border-radius:4px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+/* Responsive tweak – stack cards on tablets/phones */
+@media (max-width:768px) {
+  .integration-card { margin-bottom:25px; }
+}
+
+/* ------------------------------------------------------
+   Integration modal colours & bullets
+   ------------------------------------------------------ */
+#integrationModal .modal-content  { background:#333; }
+#integrationModal .modal-title,
+#integrationModal .modal-body li  { color:#fff!important; }
+
+#integrationModal ul {            /* merged duplicate */
+  list-style:disc;
+  margin-left:1.25rem;
+}
+
+/* ======================================================
+   PAYMENTS HERO (OnboardMe × Pinch)
+   ====================================================== */
+
+/* Full-width intro paragraph spacing */
+#payments-hero .intro-lead {
+  max-width:75ch;    /* keeps line length readable on ultrawide */
+  margin:0 auto 2rem;
+}
+
+/* Responsive headline sizing */
+#payments-hero h2 {
+  font-size:clamp(2.75rem,4.5vw + 1rem,4.5rem);  /* 44‒72 px */
+  line-height:1.15;
+}
+
+/* Equal-height card & list when there’s room */
+@media (min-width:992px) {
+  #payments-hero .pinch-card,
+  #payments-hero .deliverables { height:100%; }
+}
+
+/* Column width tweak (Pinch panel larger) */
+@media (min-width:992px) {
+  #payments-hero .col-lg-6.pinch-col { flex:0 0 58%; max-width:58%; }
+  #payments-hero .col-lg-6.text-col  { flex:0 0 42%; max-width:42%; }
+}
+
+/* Make every Bootstrap container 15 % wider on xl/xxl screens */
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;  /* default is 1140 px — tweak to suit */
+  }
+}
+
+/* Pinch Card tweaks */
+.pinch-card {
+  padding:3rem 2rem;      /* larger */
+  border-radius:12px;     /* softer corners */
+}
+.pinch-card img { max-width:380px; }  /* logo larger */
+
+/* 1.  Give the row a gutter (-bs-gutter-*) so columns
+      have left/right padding and top spacing. */
+.list-unstyled-new.row {
+  --bs-gutter-x: 1rem;   /* horizontal gap  (≈ 16 px) */
+  --bs-gutter-y: 1rem;   /* vertical gap    (≈ 16 px) */
+}
+
+/* 2.  Let each feature card fill the whole column so that
+      padding from the gutter is visible on both sides.   */
+.feature-item {
+  box-sizing: border-box; /* include card’s own padding/border in its width   */
+  max-width: 100%;        /* stops the card from spilling over the column edge */
+}
+
+.list-unstyled-new.row > li {
+  padding: 0.5rem;   /* 8 px left + right + top + bottom */
+}
+
+  </style>
