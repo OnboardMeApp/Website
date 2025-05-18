@@ -488,33 +488,73 @@ body {
   .container-lg,
   .container-xl,
   .container-xxl {
-    max-width: 1320px;  /* default is 1140 px — tweak to suit */
+    max-width: 1320px;
   }
 }
 
-/* Pinch Card tweaks */
 .pinch-card {
-  padding:3rem 2rem;      /* larger */
-  border-radius:12px;     /* softer corners */
+  padding:3rem 2rem;   
+  border-radius:12px; 
 }
-.pinch-card img { max-width:380px; }  /* logo larger */
+.pinch-card img { max-width:380px; }  
 
-/* 1.  Give the row a gutter (-bs-gutter-*) so columns
-      have left/right padding and top spacing. */
 .list-unstyled-new.row {
-  --bs-gutter-x: 1rem;   /* horizontal gap  (≈ 16 px) */
-  --bs-gutter-y: 1rem;   /* vertical gap    (≈ 16 px) */
+  --bs-gutter-x: 1rem;  
+  --bs-gutter-y: 1rem; 
 }
 
-/* 2.  Let each feature card fill the whole column so that
-      padding from the gutter is visible on both sides.   */
 .feature-item {
-  box-sizing: border-box; /* include card’s own padding/border in its width   */
-  max-width: 100%;        /* stops the card from spilling over the column edge */
+  box-sizing: border-box; 
+  max-width: 100%;      
 }
 
 .list-unstyled-new.row > li {
-  padding: 0.5rem;   /* 8 px left + right + top + bottom */
+  padding: 0.5rem;  
 }
 
+.site-logo img {
+  height: auto !important; 
+  width:  auto;
+  max-height: 160px;
+}
+
+@media (max-width: 575.98px) { 
+  .site-logo img { max-height: 100px; }
+}
+
+.pricing-table .pricing-options {
+  flex-wrap: wrap;       
+  gap: 1rem;                
+  justify-content: center;  
+}
+
+.pricing-table .pricing-options .option {
+  flex: 1 1 250px;         
+  max-width: 320px;        
+  width: auto !important;   
+}
+
+@media (max-width: 575.98px) {
+  .pricing-table .pricing-options .option h3   { font-size: 1.25rem; }
+  .pricing-table .pricing-options .option .price { font-size: 1.5rem; }
+}
+
+.pricing-switch {
+  display: flex;       
+  flex-wrap: wrap;   
+  gap: 0.5rem 1rem;     
+  align-items: center;
+  justify-content: center; 
+}
+
+.billing-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  white-space: normal;    
+}
+
+html, body {
+  overflow-x: hidden;     
+}
   </style>
