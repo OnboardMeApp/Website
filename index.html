@@ -1,1014 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnboardMe | Streamlined Client Onboarding and Engagements</title>
-  <meta content="Streamlined Client Onboarding and Engagements" name="description">
-  <meta content="Client Onboarding, Engagements, Payments" name="keywords">
-  
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-</head>
+  <meta name="description" content="Streamlined Client Onboarding and Engagements">
+  <meta name="keywords" content="Client Onboarding, Engagements, Payments">
 
-  <!-- Favicons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Icons & fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,600,700">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- Template & custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <style>
-    /* General Styling */
-	
-	#modalImage {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-    body {
-      font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
-    }
-    .shadowbox {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-    }
-    .list-unstyled li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .list-unstyled li i {
-      margin-right: 10px;
-      color: #F6612A;
-    }
-    .list-unstyled li i.bi {
-      font-size: 1.2em;
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
-      color: #fff;
-      background-color: #F6612A;
-      border: none;
-      border-radius: 5px;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    .cta-button:hover {
-      background-color: #d9551f;
-      transform: scale(1.05);
-    }
-    #header {
-    }
-    #header .site-logo {
-      margin-bottom: 10px;
-    }
-    #header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    #header h2 {
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: #666;
-    }
-    .countdown div {
-      margin: 0 10px;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.1); /* Slight background for better contrast */
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .countdown h3 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #F6612A;
-    }
-    .countdown h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff; /* Change to white for better readability */
-    }
-    .subscribe h4 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin-top: 10px;
-    }
-    .social-links i {
-      font-size: 1.5rem;
-      color: #F6612A; /* OnboardMe orange */
-      transition: color 0.3s;
-      margin: 0 10px;
-    }
-    .social-links i:hover {
-      color: #d9551f; /* Darker shade for hover effect */
-    }
-    .section-title h2 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .feature-box i {
-      font-size: 48px;
-      color: #fa5252;
-      margin-bottom: 10px;
-    }
-    .feature-box h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .feature-box p {
-      font-size: 1rem;
-      font-weight: 400;
-      color: white;
-    }
-    #features {
-      background-color:;
-    }
-    #detailed-features img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    #detailed-features img:hover {
-      transform: scale(1.05);
-    }
-    #contact .info i {
-      font-size: 2rem;
-      color: #F6612A;
-      margin-bottom: 10px;
-    }
-    #contact .info h4 {
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-    #footer {
-      background-color: #333;
-      color: #fff;
-    }
-    #footer .copyright {
-      margin-top: 10px;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #F6612A;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 50%;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    .back-to-top:hover {
-      background-color: #d9551f;
-      transform: scale(1.1);
-    }
-
-    /* Pricing Table Styling */
-    .pricing-table {
-      margin: 50px 0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    .pricing-table .pricing-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .pricing-table .pricing-header h2 {
-      font-size: 2.25rem;
-      font-weight: 700;
-    }
-    .pricing-switch {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .pricing-switch select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      margin-right: 20px;
-      outline: none;
-      background-color: #fff;
-      color: #333;
-      transition: border-color 0.3s;
-    }
-    .pricing-switch select:focus {
-      border-color: #d9551f;
-    }
-    .pricing-switch .billing-toggle {
-      display: inline-flex;
-      align-items: center;
-      margin-right: 10px;
-    }
-    .pricing-switch .billing-toggle label {
-      font-size: 1rem;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-    .pricing-switch input[type="radio"] {
-      display: none;
-    }
-    .pricing-switch input[type="radio"] + label {
-      padding: 10px 20px;
-      border-radius: 5px;
-      background-color: #fff;
-      color: #333;
-      cursor: pointer;
-      transition: background-color 0.3s, border-color 0.3s;
-    }
-    .pricing-switch input[type="radio"]:checked + label {
-      background-color: #993260;
-      color: #fff;
-    }
-
-    .pricing-table .pricing-options {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      align-items: stretch;
-    }
-
-    /* Make all pricing boxes the same size and align content */
-    .pricing-table .pricing-options .option {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  padding: 20px;
-  background-color: #0000004f;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  justify-content: flex-start;
-  align-items: center;
-}
-    .pricing-table .pricing-options .option h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      color: White;
-      font-weight: bold;
-    }
-    .pricing-table .pricing-options .option p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      color: white;
-    }
-    .pricing-table .pricing-options .option .price {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fa5252;
-    }
-.pricing-table .pricing-options .option .btn,
-#hero .btn {
-  padding: 10px 20px;
-  background-color: #993260;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-/* Shared hover effect */
-.pricing-table .pricing-options .option .btn:hover,
-#hero .btn:hover {
-  background-color: #fa5252;
-  transform: scale(1.05);
-}
-	
-    .pricing-table .pricing-options .option .btn:hover {
-      background-color: #fa5252;
-      transform: scale(1.05);
-    }
-
-    /* Ensure all boxes equal height */
-    .pricing-table .pricing-options {
-      align-items: stretch;
-    }
-
-    /* Make sure content inside each box is spaced and aligned */
-    .pricing-table .pricing-options .option {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    /* Push the button to the bottom of each box, ensuring alignment across all */
-    .pricing-table .pricing-options .option .btn {
-      margin-top: 10px;
-    }
-
-    /* FAQ Section Styling */
-    #faq {
-      background-color: #8b2d6521;
-      padding: 30px 0;
-    }
-    #faq .faq-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    #faq .faq-title h2 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    #faq .faq-list {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    #faq .faq-list h3 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      cursor: pointer;
-      position: relative;
-      padding-right: 20px;
-    }
-    #faq .faq-list h3::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 1.5rem;
-      transition: transform 0.3s;
-    }
-    #faq .faq-list h3.active::after {
-      transform: rotate(45deg);
-    }
-    #faq .faq-list .faq-answer {
-      display: none;
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
-    #faq .faq-list .faq-answer p {
-      font-size: 1.5rem;
-      color: white;
-    }
-
-    .transaction-charges {
-    }
-    .charges-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .charges-box {
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-      width: 100%;
-      max-width: 600px;
-    }
-    .charges-box h3 {
-      color: White;
-      margin-bottom: 15px;
-    }
-    .charges-box p {
-      margin-bottom: 10px;
-    }
-    .charge-value {
-      font-weight: bold;
-      color: #F6612A;
-    }
-    .custom-plan-cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .custom-plan-cta p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .custom-plan-cta .cta-button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #F6612A;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .custom-plan-cta .cta-button:hover {
-      background-color: #d9551f;
-    }
-	.features-banner {
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    max-width: 1000px;
-    margin-left: auto; /* Centers the element */
-    margin-right: auto; /* Centers the element */
-    text-align: center; /* Centers text inside the element */
-}
-
-
-.features-banner h3 {
-    font-size: 1.5rem;
-    color: White;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.list-unstyled {
-  display: block;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.list-unstyled-new {
- display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem; 
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.feature-item {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    max-width: 200px;
-    width: 100%;
-}
-
-.feature-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.feature-item i {
-    color: #993260; /* Example brand color for icons */
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.feature-item p {
-    font-size: 1rem;
-    font-weight: 500;
-    color: White;
-    margin: 0;
-}
-
-/* Responsive Enhancements */
-@media (max-width: 768px) {
-    .feature-item {
-        margin-bottom: 1rem;
-        padding: 0.8rem;
-    }
-}
-
-    .text-gradient{background:linear-gradient(100deg,#993260,#F6612A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
-    @media (prefers-reduced-motion:no-preference){
-      #hero .text-gradient{animation:hue-shift 6s ease-in-out infinite alternate}
-      @keyframes hue-shift{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(20deg)}}
-
-.py-5 {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
-}
-
-#header {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-
-#header .site-logo {            
-  margin-bottom: 0 !important;  
-}
-
-#hero .list-unstyled {             
-  /* centre the whole block */
-  margin-left: auto;
-  margin-right: auto;
-  align-items: flex-start !important;  
-  width: max-content;   /* modern browsers */
-}
-#hero .list-unstyled li {
-  text-align: left;
-}
-#hero h1 {
-  margin-bottom: 2rem;
-  }
-  
-.gradient-heading {
-  background: linear-gradient(135deg, #993260,#F6612A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; 
-  color: transparent;
-}
-
-/* optional: reuse the hero’s hue‑shift animation */
-@media (prefers-reduced-motion: no-preference) {
-  .gradient-heading {
-    animation: hue-shift 6s ease-in-out infinite alternate;
-  }
-}
-
-/* Make the check‑circle icons OnboardMe orange */
-#hero .list-unstyled li i { color:#993260 !important; }
-
-
-  </style>
 </head>
 
 <body>
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+  <div class="container text-center">
+    <a class="site-logo mb-4" href="#"><img src="assets/img/OM_Logo.png" alt="OnboardMe logo" height="160"></a>
+  </div>
+</header>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center text-center">
-      <a class="site-logo mb-4" href="index-slides.html">
-        <img src="assets/img/OM_Logo.png" alt="Homepage" height="160">
-      </a>
+<main id="main">
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="py-5 overflow-hidden">
+  <div class="container">
+    <h1 class="display-3 fw-bold text-center mb-5">
+      Focus on what matters with effortless
+      <span class="text-gradient">Engagements,</span>
+      <span class="text-gradient">Payments</span> &amp;
+      <span class="text-gradient">Onboarding</span>
+    </h1>
+    <p class="lead text-center">
+      Automate engagements, onboarding and billing in one place—so your team can focus on what really matters.
+    </p>
+
+    <ul class="list-unstyled d-flex flex-column align-items-start mx-auto mt-4" style="width:max-content">
+      <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Tiered Usage Pricing</li>
+      <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Works with the systems you already use</li>
+      <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Runs fast, feels effortless</li>
+    </ul>
+
+    <div class="text-center">
+      <a href="https://anz.onboardme.app?register=1" class="cta-button mt-4" target="_blank">Sign Up Now</a>
     </div>
-  </header><!-- End #header -->
-
-  <main id="main">
-
- <!-- ======= Hero Section (single full‑width column) ======= -->
-    <section id="hero" class="py-5 overflow-hidden">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-
-            <h1 class="display-3 fw-bold lh-1 text-center mb-5">
-			  Focus on what matters with effortless
-			  <span class="text-gradient">Engagements,</span>
-			  <span class="text-gradient">Payments</span> &amp;
-			  <span class="text-gradient">Onboarding</span>
-			</h1>
-
-			<p class="lead mt-3 text-center">
-			  Automate engagements, onboarding and billing in one place—so your team can focus on what really matters.
-			</p>
-
-            <ul class="list-unstyled mt-4 d-flex flex-column align-items-start">
-              <li class="mb-2">
-                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                Tiered Usage Pricing
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                Works with the systems you already use
-              </li>
-              <li>
-                <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                Runs fast, feels effortless
-              </li>
-            </ul>
-
-            <div class="text-center">
-				  <a href="https://anz.onboardme.app?register=1"
-					 class="cta-button mt-4"
-					 target="_blank">
-					Sign Up Now
-				  </a>
-				</div>
-
-          </div>
-        </div>
-      </div>
-    </section><!-- End Hero Section -->
-
-
-    <!-- ======= Platform Features Section ======= -->
-    
+  </div>
+</section>
 
 <!-- ======= Detailed Features Section ======= -->
-<section id="detailed-features" class="detailed-features py-5">
-        <div class="section-title text-center mb-5">
-		
-          <h2>Platform Features</h2>
-        </div>
+<section id="detailed-features" class="py-5">
   <div class="container">
-    <!-- Client Onboarding Section -->
+    <div class="section-title text-center mb-5"><h2 style="font-size:3rem;">Platform Features</h2></div>
+
+    <!-- Client Onboarding -->
     <div class="row align-items-center mb-5">
+      <div class="col-lg-6"><a href="img/ClientOnboarding.png" class="open-image"><img src="img/ClientOnboarding.png" class="img-fluid shadowbox" alt="Client Onboarding"></a></div>
       <div class="col-lg-6">
-        <a href="img/ClientOnboarding.png" class="open-image">
-          <img src="img/ClientOnboarding.png" class="img-fluid shadowbox" alt="Client Onboarding">
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h3 class="gradient-heading fs-2 fs-md-2">Client Onboarding</h3>
-        <p>Whether its an individual or a large family group, simple and intuitive forms guide clients through the onboarding and verification process.</p>
+        <h1 class="gradient-heading">Client Onboarding</h1>
+        <p>Whether it’s an individual or a large family group, simple and intuitive forms guide clients through the onboarding and verification process.</p>
       </div>
     </div>
 
-   <!-- Engagements Section -->
-	<div class="row align-items-center mb-5 flex-lg-row-reverse">
-	  <div class="col-lg-6">
-		<a href="img/Proposal.png" class="open-image">
-		  <img src="img/Proposal.png" class="img-fluid shadowbox" alt="Engagements">
-		</a>
-	  </div>
-	  <div class="col-lg-6">
-		<h3 class="gradient-heading fs-2 fs-md-3">Engagements</h3>
-		<p>Streamline your engagement creation and approval process with our intuitive tools, ensuring full compliance and enhanced communication with your clients.</p>
-	  </div>
-	</div>
-
-	<!-- Payments Section -->
-	<div class="row align-items-center mb-5">
-	  <div class="col-lg-6">
-		<a href="img/Payments.png" class="open-image">
-		  <img src="img/Payments.png" class="img-fluid shadowbox" alt="Payments">
-		</a>
-	  </div>
-	  <div class="col-lg-6">
-		<h3 class="gradient-heading">Payments</h3>
-		<p>Experience secure, timely payment processing with multiple payment options, ensuring a smooth transaction every time.</p>
-	  </div>
-	</div>
-
-    <!-- Ethical Letters Section -->
-    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+    <!-- Engagements -->
+    <div class="row align-items-center flex-lg-row-reverse mb-5">
+      <div class="col-lg-6"><a href="img/Proposal.png" class="open-image"><img src="img/Proposal.png" class="img-fluid shadowbox" alt="Engagements"></a></div>
       <div class="col-lg-6">
-        <a href="img/EthicalLetter.png" class="open-image">
-          <img src="img/EthicalLetter.png" class="img-fluid shadowbox" alt="Ethical Letters">
-        </a>
+        <h1 class="gradient-heading">Engagements</h1>
+        <p>Streamline your engagement creation and approval process with our intuitive tools, ensuring full compliance and enhanced communication with your clients.</p>
       </div>
+    </div>
+
+    <!-- Payments -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6"><a href="img/Payments.png" class="open-image"><img src="img/Payments.png" class="img-fluid shadowbox" alt="Payments"></a></div>
       <div class="col-lg-6">
-        <h3 class="gradient-heading">Ethical Letter (No Professional Objection)</h3>
+        <h1 class="gradient-heading">Payments</h1>
+        <p>Experience secure, timely payment processing with multiple payment options, ensuring a smooth transaction every time.</p>
+      </div>
+    </div>
+
+    <!-- Ethical Letters -->
+    <div class="row align-items-center flex-lg-row-reverse mb-5">
+      <div class="col-lg-6"><a href="img/EthicalLetter.png" class="open-image"><img src="img/EthicalLetter.png" class="img-fluid shadowbox" alt="Ethical Letters"></a></div>
+      <div class="col-lg-6">
+        <h1 class="gradient-heading">Ethical Letter (No Professional Objection)</h1>
         <p>Automate your ethical letter process by simplifying letter creation. The prior accountant can upload documents securely and will receive follow-up reminders automatically.</p>
       </div>
     </div>
 
-    <!-- Multi-factor Secured Onboarding Section -->
+    <!-- Security -->
     <div class="row align-items-center mb-5">
+      <div class="col-lg-6"><a href="img/Onboarding2FA.png" class="open-image"><img src="img/Onboarding2FA.png" class="img-fluid shadowbox" alt="2FA"></a></div>
       <div class="col-lg-6">
-        <a href="img/Onboarding2FA.png" class="open-image">
-          <img src="img/Onboarding2FA.png" class="img-fluid shadowbox" alt="2FA Onboarding">
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h3 class="gradient-heading">Security made simple</h3>
-        <p>Mandatory SMS-based two-factor authentication secures client onboarding, while platform users benefit from Single Sign-On and authenticator app-based 2FA, to protect sensitive data at all times.</p>
+        <h1 class="gradient-heading">Security made simple</h1>
+        <p>Mandatory SMS-based two-factor authentication secures client onboarding, while platform users benefit from Single Sign-On and authenticator app-based 2FA.</p>
       </div>
     </div>
 
-    <!-- Branding Section -->
-    <div class="row align-items-center mb-5 flex-lg-row-reverse">
+    <!-- Branding -->
+    <div class="row align-items-center flex-lg-row-reverse mb-5">
+      <div class="col-lg-6"><a href="img/Branding.png" class="open-image"><img src="img/Branding.png" class="img-fluid shadowbox" alt="Branding"></a></div>
       <div class="col-lg-6">
-        <a href="img/Branding.png" class="open-image">
-          <img src="img/Branding.png" class="img-fluid shadowbox" alt="Branding">
-        </a>
-      </div>
-      <div class="col-lg-6">
-        <h3 class="gradient-heading">Make it your own</h3>
-        <p>Tailor the onboarding, engagement, and ethical letter experience, to showcase your brand with personalized logos and custom button colors.</p>
+        <h1 class="gradient-heading">Make it your own</h1>
+        <p>Tailor onboarding, engagement, and ethical letters to showcase your brand with personalised logos and custom button colours.</p>
       </div>
     </div>
-
   </div>
-</section><!-- End Detailed Features Section -->
+</section>
 
-    
+<!-- ======= Payments Hero ======= -->
+<section id="payments-hero" class="py-5 text-center text-white">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Headline -->
+      <div class="col-12">
+        <h2 class="fw-bold mb-2 text-lg-start">
+          <span class="text-gradient">OnboardMe</span> +
+          <span class="text-gradient">Pinch&nbsp;Payments</span>:
+          An Integration Built for Real Service Businesses
+        </h2>
+      </div>
+
+      <!-- Intro paragraph (full width) -->
+      <div class="col-12">
+        <p class="lead intro-lead">
+          Getting a new client onboard should feel like a win, not a whirlwind of admin.
+          That’s why OnboardMe has partnered with Pinch Payments to combine engagement creation,
+          automated billing, and secure payment collection into a single, powerful flow.
+          This integration is designed for how real businesses work – efficiently,
+          professionally, and with cash-flow in mind.
+        </p>
+      </div>
+
+      <!-- Deliverables list -->
+      <div class="col-lg-6 order-lg-1 order-2 text-md-start deliverables">
+
+        <h3 class="h5 fw-bold mb-3">What This Integration Delivers</h3>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Integrated Payment Capture – credit card <em>and</em> bank debit in one flow</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Get Paid On Acceptance – turn proposal sign-off into instant payment</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Auto-Reconciliation straight into your accounting software</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Recurring &amp;&nbsp;Upfront Billing – payment plans, split invoices, or bill in full</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Branded Client Experience – your logo, colours &amp; terms with a secure interface</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Smart Automation – real-time updates and flexible follow-ups for missed payments</li>
+        </ul>
+
+        <a href="https://getpinch.com.au/" class="cta-button"
+			   target="_blank" rel="noopener">
+			  View Pinch
+			</a>
+      </div>
+
+      <!-- Pinch card -->
+      <div class="col-lg-6 order-lg-2 order-1">
+        <div class="pinch-card p-4 h-100 text-center shadowbox">
+          <img src="img/pinch-logo.png" class="img-fluid mb-3" style="max-width:300px" alt="Pinch Payments logo">
+          <h3 class="h5 fw-bold text-white">Powered by Pinch Payments</h3>
+          <p class="mb-0 text-white-50">
+            Our partnership with Pinch delivers bank-level security, best-in-class rates,
+            and instant reconciliation straight into OnboardMe.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+<!-- End Payments Hero -->
+
+
+
+
+<!-- ======= Integrations Section ======= -->
+<section id="integrations">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+        <div class="section-title text-center"><h2 style="font-size:3rem;">Integrations</h2></div>
+      <p class="lead text-white-50">Connect OnboardMe with the practice systems you already use.</p>
+    </div>
+	
+	  <div class="pricing-switch mb-3 text-center">
+	  <label for="country">Select Country:</label>
+		<select id="country-integrations" class="country-select" onchange="updatePricesAndCharges()">
+			<option value="AUD" selected>Australia</option>
+			<option value="NZD">New Zealand</option>
+			<option value="ZAR">South Africa</option>
+		</select>
+      </div>
+
+    <div class="row g-4">
+
+      <!-- Xero Practice Manager -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="xero-pm" data-countries="au,nz">
+          <img src="img/Xero_Logo.png" alt="Xero">
+          <h4>Xero Practice&nbsp;Manager</h4>
+          <p>Sync clients and jobs automatically to keep your data aligned.</p>
+        </div>
+      </div>
+
+      <!-- Xero Ledger -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="xero-ledger" data-countries="all">
+          <img src="img/Xero_Logo.png" alt="Xero">
+          <h4>Xero Ledger</h4>
+          <p>Create Contacts and push invoices and payments straight from OnboardMe and Pinch Payments.</p>
+        </div>
+      </div>
+
+      <!-- MYOB Practice Management -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="myob-pm" data-countries="au,nz" data-comingsoon="true">
+          <span class="badge-comingsoon">In Development</span>
+          <img src="img/myob_logo.png" alt="MYOB">
+          <h4>MYOB Practice&nbsp;Management</h4>
+          <p>Sync Clients, Tasks and Billing between MYOB Practice Management and OnboardMe.</p>
+        </div>
+      </div>
+
+      <!-- MYOB Business / AccountRight -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="myob-ar" data-countries="au,nz" data-comingsoon="true">
+          <span class="badge-comingsoon">Coming Soon</span>
+          <img src="img/myob_logo.png" alt="MYOB">
+          <h4>MYOB Business / AccountRight</h4>
+          <p>Create Clients and push invoices and payments straight from OnboardMe and Pinch Payments.</p>
+        </div>
+      </div>
+
+      <!-- GreatSoft -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="greatsoft" data-countries="za" data-comingsoon="true">
+          <span class="badge-comingsoon">In Development</span>
+          <img src="img/Greatsoft_logo.png" alt="GreatSoft">
+          <h4>GreatSoft</h4>
+          <p>Sync Clients, Tasks and Billing between GreatSoft and OnboardMe.</p>
+        </div>
+      </div>
+
+      <!-- FYI -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="fyi" data-countries="au,nz" data-comingsoon="true">
+		<span class="badge-comingsoon">Coming Soon</span>
+          <img src="img/FYI.png" alt="FYI">
+          <h4>FYI</h4>
+          <p>Sync Clients, Billings and autofile documents between OnboardMe and FYI.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+     <!-- Features banner -->
+      <div class="features-banner">
+        <div class="section-title text-center"><h2 style="font-size:3rem;">Features included in all  plans</h2></div>
+        <ul class="list-unstyled-new row gx-3 gy-0 justify-content-center">
+
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-user-check fa-2x"></i><p>Client Onboarding</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-file-contract fa-2x"></i><p>Engagements</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-sack-dollar fa-2x"></i><p>Payments</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-thumbs-up fa-2x"></i><p>Ethical Letters</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-list-check fa-2x"></i><p>Internal Checklists</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-arrow-right-arrow-left fa-2x"></i><p>Integrations</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-users fa-2x"></i><p>Unlimited Users</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-dollar-sign fa-2x"></i><p>Multi-Currency</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fas fa-paint-brush fa-2x"></i><p>Custom Branding</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fa-solid fa-key fa-2x"></i><p>Login with Microsoft/Google</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fa-solid fa-people-group fa-2x"></i><p>Unlimited Clients</p></li>
+          <li class="col-md-3 col-sm-4 mb-3 feature-item"><i class="fa-brands fa-aws fa-2x"></i><p>Data Hosted Onshore</p></li>
+        </ul>
+      </div>
+
+
 <!-- ======= Pricing Section ======= -->
-<section id="pricing">
   <div class="container">
     <div class="pricing-table">
-      
-      <!-- 1. Enhanced Features Banner -->
-      <div class="features-banner">
-    <h3>All Plans Include:</h3>
-    <ul class="list-unstyled-new row justify-content-center">
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-user-check fa-2x"></i>
-            <p>Client Onboarding</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-file-contract fa-2x"></i>
-            <p>Engagements</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-sack-dollar fa-2x"></i>
-            <p>      Payments</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-thumbs-up fa-2x"></i>
-            <p>Ethical Letters</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-list-check fa-2x"></i>
-            <p>Internal Checklists</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-arrow-right-arrow-left fa-2x"></i>
-            <p>Integrations</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-users fa-2x"></i>
-            <p>Unlimited Users</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-dollar-sign fa-2x"></i>
-            <p>Multi-Currency</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fas fa-paint-brush fa-2x"></i>
-            <p>Custom Branding</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fa-solid fa-key fa-2x"></i>
-            <p>Login with Microsoft/Google</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fa-solid fa-people-group fa-2x"></i>
-            <p>Unlimited Clients</p>
-        </li>
-        <li class="col-md-3 col-sm-4 mb-3 feature-item">
-            <i class="fa-brands fa-aws fa-2x"></i>
-            <p>Data Hosted Onshore</p>
-        </li>
-    </ul>
-</div>
 
 
+      <!-- Pricing header -->
+      <div class="section-title text-center"><h2 style="font-size:3rem;">Pricing Plans</h2></div>
+        <ul
 
-  <div class="pricing-header">
-  <h2>Our Pricing Plans</h2>
-</div>
-
-<div class="pricing-switch">
-  <label for="country">Select Country:</label>
-  <select id="country" onchange="updatePricesAndCharges()">
-    <option value="AUD" selected>Australia</option>
-    <option value="NZD">New Zealand</option>
-    <option value="ZAR">South Africa</option>
-  </select>
-  <div class="billing-toggle">
-    <input type="radio" id="monthly" name="billing" value="monthly" checked onchange="updatePricesAndCharges()">
-    <label for="monthly">Monthly</label>
-	<input type="radio" id="quarterly" name="billing" value="quarterly" onchange="updatePricesAndCharges()">
-    <label for="quarterly">Quarterly</label>
-    <input type="radio" id="annual" name="billing" value="annual" onchange="updatePricesAndCharges()">
-    <label for="annual">Annual</label>
-  </div>
-</div>
-
-<div class="pricing-options">
-
-  <!-- Pro Plan -->
-    <div class="option" id="starter">
-    <h3>Starter</h3>
-    <p class="requests">30 Requests per month</p>
-    <p class="price">$59</p>
-    <a href="https://anz.onboardme.app/?register=1"  class="btn" target="_blank">Get Onboard</a>
-  </div>
-  <div class="option" id="rockstar">
-    <h3>Pro</h3>
-    <p class="requests">70 Requests per month</p>
-    <p class="price">$99</p>
-    <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
-  </div>
-  <!-- Expert Plan -->
-  <div class="option" id="mvp">
-    <h3>Expert</h3>
-    <p class="requests">150 Requests per month</p>
-    <p class="price">$199</p>
-    <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
-  </div>
-  <!-- Ultimate Plan -->
-  <div class="option" id="icon">
-    <h3>Ultimate</h3>
-    <p class="requests">300 Requests per month</p>
-    <p class="price">$299</p>
-    <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
-  </div>
-
-
-</div>
-   <div class="custom-plan-cta">
-  <p id="tax-label">All prices exclude GST</p>
-</div>
-
-	  <div class="custom-plan-cta" >
-        <p>What is a request? A request is an Engagement, Client Onboarding or Ethical Letter sent from OnboardMe.</p>
+      <!-- Country & billing switcher -->
+      <div class="pricing-switch mb-3 text-center">
+        <label for="country">Select Country:</label>
+        <select id="country-pricing"
+        class="country-select"
+        onchange="updatePricesAndCharges()">
+		  <option value="AUD" selected>Australia</option>
+		  <option value="NZD">New Zealand</option>
+		  <option value="ZAR">South Africa</option>
+		</select>
+        <div class="billing-toggle d-inline-flex align-items-center ms-3">
+          <input type="radio" id="monthly"   name="billing" value="monthly"  checked onchange="updatePricesAndCharges()"><label for="monthly">Monthly</label>
+          <input type="radio" id="quarterly" name="billing" value="quarterly"        onchange="updatePricesAndCharges()"><label for="quarterly">Quarterly</label>
+          <input type="radio" id="annual"    name="billing" value="annual"           onchange="updatePricesAndCharges()"><label for="annual">Annual</label>
+        </div>
       </div>
-      <div id="free-month-label" style="text-align: center; margin-top: 10px; color: #fa5252; font-weight: bold;font-size:30px">
-        Get 1 month free with an annual subscription
+
+      <!-- Pricing options -->
+      <div class="pricing-options">
+
+        <div class="option" id="starter">
+          <h3>Starter</h3>
+          <p class="requests">30 Requests per month</p>
+          <p class="price">$59</p>
+          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+        </div>
+
+        <div class="option" id="rockstar">
+          <h3>Pro</h3>
+          <p class="requests">70 Requests per month</p>
+          <p class="price">$99</p>
+          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+        </div>
+
+        <div class="option" id="mvp">
+          <h3>Expert</h3>
+          <p class="requests">150 Requests per month</p>
+          <p class="price">$199</p>
+          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+        </div>
+
+        <div class="option" id="icon">
+          <h3>Ultimate</h3>
+          <p class="requests">300 Requests per month</p>
+          <p class="price">$299</p>
+          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+        </div>
+
       </div>
-      
-      <div class="custom-plan-cta">
+
+      <!-- Tax & custom plan blurbs -->
+      <div class="custom-plan-cta"><p id="tax-label">All prices exclude GST</p></div>
+      <div class="custom-plan-cta"><p>What is a request? A request is an Engagement, Client Onboarding or Ethical Letter sent from OnboardMe.</p></div>
+      <div id="free-month-label" class="text-center mt-2" style="color:#fa5252;font-weight:bold;font-size:30px">Get 1 month free with an annual subscription</div>
+      <div class="custom-plan-cta mt-3">
         <p>Need a custom plan tailored to your specific needs?</p>
         <a href="mailto:info@onboardme.app" class="cta-button">Contact Us</a>
       </div>
 
     </div>
   </div>
-</section>
-<!-- End Pricing Section -->
-
 
 <!-- ======= Transaction Charges Section ======= -->
-<section id="transaction-charges" class="transaction-charges py-5">
-  <div class="container">
-    <div class="section-title text-center mb-5">
-      <h1>Transaction Charges</h1>
-      
-    </div>
+<section id="transaction-charges" class="py-5">
+    <div class="section-title text-center"><h2 style="font-size:3rem;">Transaction Charges</h2></div>
+        <ul
     <div class="charges-container">
-      <div id="aus-charges" >
-        <h3>Australia</h3>
-        <p>Credit Card (Visa/Mastercard): <span class="charge-value">1.95% </span> + A$0.30 per transaction.</p>
-        <p>Direct Debit: <span class="charge-value">1.25%</span> per transaction.</p>
+
+      <div id="aus-charges">
+        <p>Credit Card (Visa/Mastercard): <span class="charge-value">1.95%</span> + A$0.30 per transaction.</p>
+        <p>Direct Debit: <span class="charge-value">1%</span> per transaction. (Max $5.00)</p>
       </div>
-	  <div id="nz-charges" class="charges-box" style="display: none;" >
-	  <h3>New Zealand</h3>
+
+      <div id="nz-charges" class="charges-box" style="display:none">
+        <h3>New Zealand</h3>
         <p>Credit Card (Visa/Mastercard): <span class="charge-value">2.9%</span> + NZ$0.30 per transaction.</p>
       </div>
-      <div id="sa-charges" class="charges-box" style="display: none;">
+
+      <div id="sa-charges" class="charges-box" style="display:none">
         <h3>South Africa</h3>
         <p>Credit Card (Visa/Mastercard): <span class="charge-value">3.25%</span> + R1.00 per transaction.</p>
         <p>Direct Debit: <span class="charge-value">R3.00</span> per Debit Order.</p>
       </div>
+
     </div>
-  </div>
-</section><!-- End Transaction Charges Section -->
+</section>
+
+<!-- ======= Social Links ======= -->
 <div class="social-links text-center mt-4">
   <p>Follow us on Social Media.</p>
-  <a href="https://twitter.com/onboardmeapp" class="twitter" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-  <a href="https://www.facebook.com/onboardmeapp" class="facebook" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-  <a href="https://www.linkedin.com/company/onboardmeapp" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+  <a href="https://twitter.com/onboardmeapp" target="_blank"><i class="bi bi-twitter"></i></a>
+  <a href="https://www.facebook.com/onboardmeapp" target="_blank"><i class="bi bi-facebook"></i></a>
+  <a href="https://www.linkedin.com/company/onboardmeapp" target="_blank"><i class="bi bi-linkedin"></i></a>
 </div>
 
+</main>
 
-<!-- Pricing Script -->
+<!-- ======= Integration Modal ======= -->
+<div class="modal fade" id="integrationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="integrationModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body"><ul id="integrationModalBullets"></ul></div>
+    </div>
+  </div>
+</div>
+
+<section id="transaction-charges" class="py-5">
+<!-- ======= Image Modal (for screenshots) ======= -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content"><div class="modal-body p-0"><img src="" id="modalImage" alt="Expanded image"></div></div>
+  </div>
+</div>
+</section>
+
+<!-- ======= Scripts ======= -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
-// Define base prices for monthly plans
-const basePrices = {
-  AUD: { starter:59, pro: 99, expert: 199, ultimate: 299 },
-  NZD: { starter:69, pro: 109, expert: 219, ultimate: 329 },
-  ZAR: { starter:599, pro: 999, expert: 1999, ultimate: 2999 },
+/* ----------------- static data (unchanged) ------------------- */
+const basePrices={AUD:{starter:59,pro:99,expert:199,ultimate:299},
+                  NZD:{starter:69,pro:109,expert:219,ultimate:329},
+                  ZAR:{starter:599,pro:999,expert:1999,ultimate:2999}};
+const requestsPerPlan={starter:30,pro:70,expert:150,ultimate:300};
+
+/* ------------- Integration modal bullet copy ---------------- */
+const integrationDetails = {
+  "xero-pm": {
+    title   : "Xero Practice Manager Integration",
+    bullets : [
+      "Two‑way sync of client information.",
+      "Two‑way sync of family group information.",
+      "Create Jobs and Tasks from Engagements.",
+      "Invoices paid upfront synced automatically."
+    ]
+  },
+  "xero-ledger": {
+    title   : "Xero Ledger Integration",
+    bullets : [
+      "Two‑way sync of client information.",
+      "Raise invoices & payments without re‑keying.",
+      "Map Sales Items and Tax Rates to Engagement Services to keep GL codes right."
+    ]
+  },
+  "myob-pm": {
+    title   : "MYOB Practice Management Integration",
+    bullets : [
+      "Two‑way sync of client information.",
+      "Map and create Tasks from Engagement Services.",
+      "Create Billings from paid Pro‑forma Invoices."
+    ]
+  },
+  "myob-ar": {
+    title   : "MYOB Business / AccountRight Integration",
+    bullets : [
+      "Create ledgers and contacts directly from onboarding.",
+      "Send invoices & payment links that reconcile automatically.",
+      "Support for multi‑branch setups."
+    ]
+  },
+  "greatsoft": {
+    title   : "GreatSoft Integration",
+    bullets : [
+      "One‑click creation of clients and groups.",
+      "Sync engagement fees into GreatSoft billing.",
+      "Create Tasks based on Engagement Services accepted."
+    ]
+  },
+  "fyi": {
+    title   : "FYI Integration",
+    bullets : [
+      "Two‑way sync of client information.",
+      "Create invoices and payments (via Xero Ledger).",
+      "Auto‑file signed engagements and onboarding forms."
+    ]
+  }
 };
 
-// Define requests per plan per month
-const requestsPerPlan = {
-  starter: 30,
-  pro: 70,
-  expert: 150,
-  ultimate: 300,
-};
 
-function updatePricesAndCharges() {
-  const country       = document.getElementById("country").value;
-  const billingPeriod = document.querySelector('input[name="billing"]:checked').value;
-  const prices   = { ...basePrices[country] };
-  const requests = { ...requestsPerPlan };
-
-  let requestDisplaySuffix = "requests per month";
-
-  /* --- ANNUAL (one-month-free) ---------------------------------- */
-  if (billingPeriod === "annual") {
-    // one month free → pay for 11
-    prices.starter *= 11;
-    prices.pro     *= 11;
-    prices.expert  *= 11;
-    prices.ultimate*= 11;
-
-    // but the allowance is a full 12 months
-    requests.starter  *= 12;
-    requests.pro      *= 12;
-    requests.expert   *= 12;
-    requests.ultimate *= 12;
-
-    requestDisplaySuffix = "requests per year";
-  }
-
-  /* --- QUARTERLY ------------------------------------------------- */
-  if (billingPeriod === "quarterly") {
-    prices.starter  *= 3;
-    prices.pro      *= 3;
-    prices.expert   *= 3;
-    prices.ultimate *= 3;
-
-    requests.starter  *= 3;
-    requests.pro      *= 3;
-    requests.expert   *= 3;
-    requests.ultimate *= 3;
-
-    requestDisplaySuffix = "requests per quarter";
-  }
-
-  /* --- Update DOM ------------------------------------------------ */
-  document.getElementById("starter" ).querySelector(".price").textContent    = `${country} ${prices.starter}`;
-  document.getElementById("rockstar").querySelector(".price").textContent    = `${country} ${prices.pro}`;
-  document.getElementById("mvp"     ).querySelector(".price").textContent    = `${country} ${prices.expert}`;
-  document.getElementById("icon"    ).querySelector(".price").textContent    = `${country} ${prices.ultimate}`;
-
-  document.getElementById("starter" ).querySelector(".requests").textContent = `${requests.starter } ${requestDisplaySuffix}`;
-  document.getElementById("rockstar").querySelector(".requests").textContent = `${requests.pro     } ${requestDisplaySuffix}`;
-  document.getElementById("mvp"     ).querySelector(".requests").textContent = `${requests.expert  } ${requestDisplaySuffix}`;
-  document.getElementById("icon"    ).querySelector(".requests").textContent = `${requests.ultimate} ${requestDisplaySuffix}`;
-
-  // Update transaction charges display
-  const ausCharges = document.getElementById("aus-charges");
-  const nzCharges = document.getElementById("nz-charges");
-  const saCharges = document.getElementById("sa-charges");
-
-  if (country === "ZAR") {
-    ausCharges.style.display = "none";
-    nzCharges.style.display = "none";
-    saCharges.style.display = "block";
-  } else if (country === "NZD") {
-    ausCharges.style.display = "none";
-    nzCharges.style.display = "block";
-    saCharges.style.display = "none";
-  } else {
-    ausCharges.style.display = "block";
-    nzCharges.style.display = "none";
-    saCharges.style.display = "none";
-  }
-
-  // Update tax label dynamically
-  const taxLabel = document.getElementById("tax-label");
-  if (country === "ZAR") {
-    taxLabel.innerHTML = "All prices exclude VAT";
-  } else if (country === "NZD") {
-    taxLabel.innerHTML = "All prices exclude GST";
-  } else {
-    taxLabel.innerHTML = "All prices exclude GST";
-  }
+/* ----------------- helper to get current country ------------- */
+function getSelectedCountry () {
+  // the first .country-select is fine because we keep them in sync
+  const sel = document.querySelector('.country-select');
+  return sel ? sel.value : 'AUD';
 }
 
-// Call the function on page load to initialize everything
-document.addEventListener('DOMContentLoaded', function() {
-  updatePricesAndCharges();
+/* ----------------- integrations visibility ------------------ */
+function updateIntegrations (country = getSelectedCountry()) {
+  document.querySelectorAll('.integration-card').forEach(card => {
+    const allowed = card.dataset.countries;          // "au,nz" | "za" | "all"
+    const show = allowed === 'all' ||
+                 (country === 'AUD' && allowed.includes('au')) ||
+                 (country === 'NZD' && allowed.includes('nz')) ||
+                 (country === 'ZAR' && allowed.includes('za'));
 
-  document.querySelectorAll('a.open-image').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      var imgSrc = this.getAttribute('href');
-      document.getElementById('modalImage').setAttribute('src', imgSrc);
-      var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
-      imageModal.show();
+    card.parentElement.style.display = show ? '' : 'none';
+  });
+}
+
+/* ----------------- prices / charges -------------------------- */
+function updatePricesAndCharges (country = getSelectedCountry()) {
+  const period  = document.querySelector('input[name="billing"]:checked').value;
+  const prices  = { ...basePrices[country] };
+  const req     = { ...requestsPerPlan };
+  let   suffix  = 'requests per month';
+
+  if (period === 'annual')    { Object.keys(prices).forEach(k => prices[k] *= 11); Object.keys(req).forEach(k => req[k] *= 12); suffix = 'requests per year'; }
+  if (period === 'quarterly') { Object.keys(prices).forEach(k => prices[k] *= 3 ); Object.keys(req).forEach(k => req[k] *= 3 );  suffix = 'requests per quarter'; }
+
+  document.querySelector('#starter  .price').textContent  = `${country} ${prices.starter}`;
+  document.querySelector('#rockstar .price').textContent  = `${country} ${prices.pro}`;
+  document.querySelector('#mvp      .price').textContent  = `${country} ${prices.expert}`;
+  document.querySelector('#icon     .price').textContent  = `${country} ${prices.ultimate}`;
+
+  document.querySelector('#starter  .requests').textContent = `${req.starter} ${suffix}`;
+  document.querySelector('#rockstar .requests').textContent = `${req.pro} ${suffix}`;
+  document.querySelector('#mvp      .requests').textContent = `${req.expert} ${suffix}`;
+  document.querySelector('#icon     .requests').textContent = `${req.ultimate} ${suffix}`;
+
+  document.getElementById('aus-charges').style.display = country === 'AUD' ? 'block' : 'none';
+  document.getElementById('nz-charges').style.display  = country === 'NZD' ? 'block' : 'none';
+  document.getElementById('sa-charges').style.display  = country === 'ZAR' ? 'block' : 'none';
+  document.getElementById('tax-label').textContent     = country === 'ZAR'
+                                                         ? 'All prices exclude VAT'
+                                                         : 'All prices exclude GST';
+
+  updateIntegrations(country);
+}
+
+/* ----------------- keep dropdowns in sync ------------------- */
+document.querySelectorAll('.country-select').forEach(select => {
+  select.addEventListener('change', e => {
+    const newValue = e.target.value;
+
+    document.querySelectorAll('.country-select').forEach(other => {
+      if (other !== e.target) other.value = newValue;
     });
+
+    updatePricesAndCharges(newValue);  // one call, one refresh
   });
 });
 
+/* ----------------- integration modal (unchanged) ------------- */
+const modal = new bootstrap.Modal(document.getElementById('integrationModal'));
+document.querySelectorAll('.integration-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const d = integrationDetails[card.dataset.integration];
+    if (!d) return;
 
-</script>
-<!-- Bootstrap JS Bundle (includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    document.getElementById('integrationModalLabel').textContent = d.title;
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a.open-image').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        var imgSrc = this.getAttribute('href');
-        document.getElementById('modalImage').setAttribute('src', imgSrc);
-        var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
-        imageModal.show();
-      });
-    });
+    const ul = document.getElementById('integrationModalBullets');
+    ul.innerHTML = '';
+    d.bullets.forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+
+    modal.show();
   });
-</script>
-<!-- Image Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <img src="" id="modalImage" alt="Expanded image">
-      </div>
-    </div>
-  </div>
-</div>
-</body>
+});
 
+/* ----------------- image modal (unchanged) ------------------- */
+document.querySelectorAll('a.open-image').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('modalImage').src = anchor.href;
+    new bootstrap.Modal(document.getElementById('imageModal')).show();
+  });
+});
+
+/* ----------------- boot up ---------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  updatePricesAndCharges();  // this also calls updateIntegrations
+});
+</script>
+
+</body>
 </html>
