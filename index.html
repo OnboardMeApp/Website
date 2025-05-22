@@ -51,7 +51,11 @@
     </ul>
 
     <div class="text-center">
-      <a href="https://anz.onboardme.app?register=1" class="cta-button mt-4" target="_blank">Sign Up Now</a>
+      <a  href="https://anz.onboardme.app?register=1"
+    class="cta-button cta-button--big mt-4"
+    target="_blank">
+  Start a 14-day free trial
+</a>
     </div>
   </div>
 </section>
@@ -147,7 +151,7 @@
 
         <h3 class="h5 fw-bold mb-3">What This Integration Delivers</h3>
         <ul class="list-unstyled mb-4">
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Integrated Payment Capture – credit card <em>and</em> bank debit in one flow</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Integrated Payment Capture – credit card &amp bank debit in one flow</li>
           <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Get Paid On Acceptance – turn proposal sign-off into instant payment</li>
           <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Auto-Reconciliation straight into your accounting software</li>
           <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Recurring &amp;&nbsp;Upfront Billing – payment plans, split invoices, or bill in full</li>
@@ -255,6 +259,16 @@
           <img src="img/FYI.png" alt="FYI">
           <h4>FYI</h4>
           <p>Sync Clients, Billings and autofile documents between OnboardMe and FYI.</p>
+        </div>
+      </div>
+	  
+	  <!-- QBO -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="qbo" data-countries="all" data-comingsoon="true">
+		<span class="badge-comingsoon">Coming Soon</span>
+          <img src="img/QBO.png" alt="QBO">
+          <h4>Quickbooks Online</h4>
+          <p>Sync Clients, Billings and Payments between QuickBooks Online and OnboardMe.</p>
         </div>
       </div>
 
@@ -469,6 +483,14 @@ const integrationDetails = {
       "Two‑way sync of client information.",
       "Create invoices and payments (via Xero Ledger).",
       "Auto‑file signed engagements and onboarding forms."
+    ]
+	},
+	"qbo": {
+    title   : "QuickBooks Online Integration",
+    bullets : [
+      "Two‑way sync of client information.",
+      "Create invoices from Accepted Engagements",
+      "Auto reconcile payments via Pinch Payments."
     ]
   }
 };
