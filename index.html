@@ -24,8 +24,16 @@
 <body>
 <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
-  <div class="container text-center">
-    <a class="site-logo mb-4" href="#"><img src="assets/img/OM_Logo.png" alt="OnboardMe logo" height="160"></a>
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <a class="site-logo mb-0" href="#">
+      <img src="assets/img/OM_Logo.png" alt="OnboardMe logo" height="160">
+    </a>
+
+    <!-- Login button (uses the same “cta-button” styling as the rest of the site) -->
+    <a href="https://anz.onboardme.app" class="cta-button">
+      Login
+    </a>
   </div>
 </header>
 
@@ -120,6 +128,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- ======= Payments Hero ======= -->
 <section id="payments-hero" class="py-5 text-center text-white">
@@ -225,10 +234,18 @@
       <!-- MYOB Practice Management -->
       <div class="col-lg-3 col-md-6">
         <div class="integration-card h-100" data-integration="myob-pm" data-countries="au,nz" data-comingsoon="true">
-          <span class="badge-comingsoon">In Development</span>
           <img src="img/myob_logo.png" alt="MYOB">
           <h4>MYOB Practice&nbsp;Management</h4>
           <p>Sync Clients, Tasks and Billing between MYOB Practice Management and OnboardMe.</p>
+        </div>
+      </div>
+	  
+	   <!-- Xero Practice Manager -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="lodge-it" data-countries="au">
+          <img src="img/Lodgeit_Logo.png" alt="LodgeiT">
+          <h4>LodgeiT</h4>
+          <p>Export clients to LodgeiT from OnboardMe.</p>
         </div>
       </div>
 
@@ -245,7 +262,6 @@
       <!-- GreatSoft -->
       <div class="col-lg-3 col-md-6">
         <div class="integration-card h-100" data-integration="greatsoft" data-countries="za" data-comingsoon="true">
-          <span class="badge-comingsoon">In Development</span>
           <img src="img/Greatsoft_logo.png" alt="GreatSoft">
           <h4>GreatSoft</h4>
           <p>Sync Clients, Tasks and Billing between GreatSoft and OnboardMe.</p>
@@ -275,6 +291,66 @@
     </div>
   </div>
 </section>
+
+<!-- ======= Identity Verification Hero ======= -->
+<section id="identity-hero" class="py-5 text-center text-white">
+  <div class="container">
+   <div class="row g-4 align-items-center">
+
+      <!-- Headline (full width) -->
+      <div class="col-12">
+        <h1 class="fw-bold mb-2 text-lg">
+          <span class="text-gradient">Identity&nbsp;Verification</span> 
+        </h1>
+		<h5>
+		Powered&nbsp;by&nbsp;Stripe
+		</h5>
+      </div>
+	 
+
+      <!-- Intro paragraph (full width) -->
+      <div class="col-12">
+        <p class="lead intro-lead">
+          OnboardMe has partnered with Stripe to embed bank-level
+          identity checks directly into your onboarding flow, using the
+          same technology that verifies millions of users worldwide.<br>
+        </p>
+      </div>
+
+      <!-- Benefits list -->
+      <div class="col-lg-6 order-lg-1 order-2 text-md-start deliverables">
+        <h3 class="h5 fw-bold mb-3">Why Secure Identity Verification Matters</h3>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>
+            Meets the stringent Australian Tax Office (ATO) and Tax Practitioners Board (TPB) requirements  </li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>
+             Reduce Fraud losses and increase trust and safety</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>
+              Real-time results inside OnboardMe</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>
+              Simple, transparent pricing — A$5 per verification</li>
+        </ul>
+      </div>
+
+      <!-- Hero image -->
+      <div class="col-lg-6 order-lg-2 order-1">
+        <div class="p-4 h-100 text-center shadowbox">
+          <img src="img/Stripe_OnboardMe.png"
+               class="img-fluid mb-2"
+               style="max-width:600px"
+               alt="Stripe Identity Verification in OnboardMe">
+          <h3 class="h5 fw-bold text-white">Securely verified by Stripe</h3>
+          <p class="mb-0 text-white-50">
+            Every verification is encrypted end-to-end on Stripe’s
+            PCI-compliant infrastructure.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+<!-- End Identity Verification Hero -->
 
      <!-- Features banner -->
       <div class="features-banner">
@@ -459,6 +535,12 @@ const integrationDetails = {
       "Two‑way sync of client information.",
       "Map and create Tasks from Engagement Services.",
       "Create Billings from paid Pro‑forma Invoices."
+    ]
+  },
+    "lodge-it": {
+    title   : "LodgeiT",
+    bullets : [
+      "Export newly onboading clients from OnboardMe to export into LodgeiT.",
     ]
   },
   "myob-ar": {
