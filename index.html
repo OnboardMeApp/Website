@@ -510,12 +510,15 @@
 
 <!-- ======= MailerLite Modal ======= -->
 <div class="modal fade" id="mlModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <!-- add bg‑dark for black background, text‑white for legible copy -->
+    <div class="modal-content bg-dark text-white">
 
       <div class="modal-header border-0">
-        <h5 class="modal-title">Stay in the loop</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <!-- invert the close‑icon so it shows on dark -->
+        <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"></button>
       </div>
 
       <div class="modal-body">
