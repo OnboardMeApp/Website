@@ -229,21 +229,22 @@
 <section id="integrations">
   <div class="container">
     <div class="section-title text-center mb-5">
-        <div class="section-title text-center"><h2 style="font-size:3rem;">Integrations</h2></div>
+      <div class="section-title text-center">
+        <h2 style="font-size:3rem;">Integrations</h2>
+      </div>
       <p class="lead text-white-50">Connect OnboardMe with the practice systems you already use.</p>
     </div>
-	
-	  <div class="pricing-switch mb-3 text-center">
-	  <label for="country">Select Country:</label>
-		<select id="country-integrations" class="country-select" onchange="updatePricesAndCharges()">
-			<option value="AUD" selected>Australia</option>
-			<option value="NZD">New Zealand</option>
-			<option value="ZAR">South Africa</option>
-		</select>
-      </div>
+
+    <div class="pricing-switch mb-3 text-center">
+      <label for="country">Select Country:</label>
+      <select id="country-integrations" class="country-select" onchange="updatePricesAndCharges()">
+        <option value="AUD" selected>Australia</option>
+        <option value="NZD">New Zealand</option>
+        <option value="ZAR">South Africa</option>
+      </select>
+    </div>
 
     <div class="row g-4">
-
       <!-- Xero Practice Manager -->
       <div class="col-lg-3 col-md-6">
         <div class="integration-card h-100" data-integration="xero-pm" data-countries="au,nz">
@@ -257,23 +258,32 @@
       <div class="col-lg-3 col-md-6">
         <div class="integration-card h-100" data-integration="xero-ledger" data-countries="all">
           <img src="img/Xero_Logo.png" alt="Xero">
-          <h4>Xero Ledger</h4>
+          <h4>Xero Accounting</h4>
           <p>Create Contacts and push invoices and payments straight from OnboardMe and Pinch Payments.</p>
         </div>
       </div>
+	  
+
 
       <!-- MYOB Practice Management -->
       <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="myob-pm" data-countries="au,nz" data-comingsoon="true">
+        <div class="integration-card h-100" data-integration="myob-pm" data-countries="au,nz" >
           <img src="img/myob_logo.png" alt="MYOB">
           <h4>MYOB Practice&nbsp;Management</h4>
           <p>Sync Clients, Tasks and Billing between MYOB Practice Management and OnboardMe.</p>
         </div>
       </div>
 	  
+	<!-- Annature -->
+	<div class="col-lg-3 col-md-6">
+	  <div class="integration-card h-100" data-integration="annature" data-countries="au,nz" data-status="beta">
+		<img src="img/Annature_logo.png" alt="Annature">
+		<h4>Annature</h4>
+		<p>Use Annature ID Verification with OnboardMe.</p>
+	  </div>
+	</div>
 
-	  
-	   <!-- LodgeIT -->
+      <!-- LodgeiT -->
       <div class="col-lg-3 col-md-6">
         <div class="integration-card h-100" data-integration="lodge-it" data-countries="au, nz">
           <img src="img/Lodgeit_Logo.png" alt="LodgeiT">
@@ -281,61 +291,54 @@
           <p>Export clients to LodgeiT from OnboardMe.</p>
         </div>
       </div>
-	  
-	 <!-- Annature -->
-      <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="annature" data-countries="au,nz" data-comingsoon="true">
-		<span class="badge-comingsoon">Coming Soon</span>
-          <img src="img/Annature_logo.png" alt="Annature">
-          <h4>Annature</h4>
-          <p>Use Annature ID Verification with OnboardMe.</p>
-        </div>
-      </div>
 
-      <!-- MYOB Business / AccountRight -->
-     <!-- <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="myob-ar" data-countries="au,nz" data-comingsoon="true">
-          <span class="badge-comingsoon">Coming Soon</span>
-          <img src="img/myob_logo.png" alt="MYOB">
-          <h4>MYOB Business / AccountRight</h4>
-          <p>Create Clients and push invoices and payments straight from OnboardMe and Pinch Payments.</p>
-        </div>
-      </div>-->
+
 
       <!-- GreatSoft -->
       <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="greatsoft" data-countries="za" >
+        <div class="integration-card h-100" data-integration="greatsoft" data-countries="za">
           <img src="img/Greatsoft_logo.png" alt="GreatSoft">
           <h4>GreatSoft</h4>
           <p>Sync Clients, Tasks and Billing between GreatSoft and OnboardMe.</p>
         </div>
       </div>
-	  
-
 
       <!-- FYI -->
       <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="fyi" data-countries="au,nz" data-comingsoon="true">
-		<span class="badge-comingsoon">Coming Soon</span>
-          <img src="img/FYI.png" alt="FYI">
-          <h4>FYI</h4>
-          <p>Sync Clients, Billings and autofile documents between OnboardMe and FYI.</p>
-        </div>
-      </div>
-	  
-	  <!-- QBO -->
+		  <div class="integration-card h-100" data-integration="fyi" data-countries="au,nz" data-status="development">
+			<img src="img/FYI.png" alt="FYI">
+			<h4>FYI</h4>
+			<p>Sync Clients, Billings and autofile documents between OnboardMe and FYI.</p>
+		  </div>
+		</div>
+
+      <!-- QBO -->
       <div class="col-lg-3 col-md-6">
         <div class="integration-card h-100" data-integration="qbo" data-countries="all" data-comingsoon="true">
-		<span class="badge-comingsoon">Coming Soon</span>
+          <span class="badge-comingsoon">Coming Soon</span>
           <img src="img/QBO.png" alt="QBO">
           <h4>Quickbooks Online</h4>
           <p>Sync Clients, Billings and Payments between QuickBooks Online and OnboardMe.</p>
         </div>
       </div>
-
     </div>
+
+    <!-- Xero Connected App (centered & after all integrations) -->
+   <div class="row mt-5">
+  <div class="col-12 text-center" style="width:400px; margin:0 auto;">
+    <img
+      src="img/XeroConnectedApp.png"
+      alt="Xero Connected App"
+      class="img-fluid"
+      style="width:100%; height:auto;"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</div>
   </div>
 </section>
+
 
 <!-- ======= Identity Verification Hero ======= -->
 <section id="identity-hero" class="py-5 text-center text-white">
@@ -573,6 +576,34 @@
 <!-- ======= Scripts ======= -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- MailerLite Universal -->
+
+<script>
+  function applyStatusBadges(){
+    const map = { beta: 'In Beta', development: 'In Development', comingsoon: 'Coming Soon' };
+
+    document.querySelectorAll('.integration-card').forEach(card => {
+      // Normalise legacy attr: data-comingsoon="true" → data-status="comingsoon"
+      if(!card.dataset.status && card.dataset.comingsoon){ card.dataset.status = 'comingsoon'; }
+
+      const status = (card.dataset.status || '').toLowerCase();
+      if(!map[status]) return;
+
+      // Clean up any old badges, then add the new one
+      card.querySelectorAll('.badge-status, .badge-comingsoon').forEach(el => el.remove());
+
+      const badge = document.createElement('span');
+      badge.className = 'badge-status';
+      badge.textContent = map[status];
+      card.appendChild(badge);
+    });
+  }
+
+  // Add this line to your existing DOMContentLoaded handler:
+  document.addEventListener('DOMContentLoaded', () => {
+    updatePricesAndCharges();   // you already have this
+    applyStatusBadges();        // <-- add this
+  });
+</script>
 <script>
   (function (w, d, e, u, f, l, n) {
     w[f] = w[f] || function () { (w[f].q = w[f].q || []).push(arguments); };
