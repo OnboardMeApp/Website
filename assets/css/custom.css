@@ -564,4 +564,41 @@ body {
 html, body {
   overflow-x: hidden;     
 }
+
+#identity-hero {
+  /* bigger top- & bottom-padding than the default .py-5 */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 2rem;        /* extra gap above the hero  */
+  margin-bottom: 3rem;     /* extra gap below the hero  */
+}
+
+/* make the Stripe mock-up visibly larger on ≥ lg screens */
+@media (min-width: 992px) {
+  #identity-hero img { max-width: 420px; }
+}
+
+/* ---------- Integration status badges (data-status) ---------- */
+.integration-card .badge-status{
+  position:absolute;
+  top:10px;
+  right:10px;
+  padding:3px 8px;
+  font-size:.72rem;
+  line-height:1;
+  font-weight:700;
+  border-radius:999px;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  background:#6c757d; /* default */
+  color:#fff;
+}
+
+/* Variants */
+.integration-card[data-status="beta"] .badge-status{ background:#0dcaf0; color:#000; }       /* In Beta */
+.integration-card[data-status="development"] .badge-status{ background:#6c757d; color:#fff; }/* In Development */
+.integration-card[data-status="comingsoon"] .badge-status{ background:#fa5252; color:#fff; } /* Coming Soon (legacy) */
+
+/* Optional: hide old hard-coded badge if you haven't removed it */
+.integration-card .badge-comingsoon { display:none; }
   </style>
