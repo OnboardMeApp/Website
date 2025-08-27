@@ -23,22 +23,23 @@
 
 <body>
 <!-- ======= Header ======= -->
-<header id="header"
-        class="d-flex justify-content-center"       
-        style="padding-top:24px;">  
-  <div class="container d-flex align-items-center" 
-       style="flex-direction:column;       
-              gap:12px;">
-               
-    <!-- Logo (stays centred because the container is flex-column & align-center) -->
-    <a class="site-logo mb-0" href="#">
-      <img src="assets/img/OM_Logo.png"
-           alt="OnboardMe logo"
-           height="160">
+<header id="header" class="py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div style="width:160px;"></div>
+    
+    <!-- Centered Logo -->
+    <a class="site-logo" href="#">
+      <img src="assets/img/OM_Logo.png" alt="OnboardMe logo" height="60">
     </a>
 
-    <!-- Login button now appears below the logo, centred -->
-
+    <!-- Login button (hidden on mobile) -->
+    <div class="d-none d-md-block">
+      <a href="https://anz.onboardme.app"
+         class="cta-button"
+         target="_blank">
+        Login
+      </a>
+    </div>
   </div>
 </header>
 
@@ -63,28 +64,20 @@
       <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Runs fast, feels effortless</li>
     </ul>
 
-
 	
-	<div class="text-center">
-      <a  href="https://anz.onboardme.app"
-    class="cta-button cta-button--big mt-4"
-    target="_blank">
-  Login
-</a>
-    </div>
-	<div class="text-center mt-4" >
-	<h4>
-	OR 
-	</h4>
-	</div>
-	
-	<div class="text-center">
-      <a  href="https://anz.onboardme.app?register=1"
-    class="cta-button cta-button--big mt-4"
-    target="_blank">
-  Start a 14-day free trial
-</a>
-    </div>
+<div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
+  <a href="https://link.onboardme.app/website-register"
+     class="cta-button"
+     target="_blank">
+    Start a 1 month free trial
+  </a>
+  <span class="align-self-center fw-bold">OR</span>
+  <a href="https://forms.cloud.microsoft/r/ApuawA11Rv"
+     class="cta-button"
+     target="_blank">
+    Book a Demo
+  </a>
+</div>
   </div>
 </section>
 
@@ -276,7 +269,7 @@
 	  
 	<!-- Annature -->
 	<div class="col-lg-3 col-md-6">
-	  <div class="integration-card h-100" data-integration="annature" data-countries="au,nz" data-status="beta">
+	  <div class="integration-card h-100" data-integration="annature" data-countries="au,nz" >
 		<img src="img/Annature_logo.png" alt="Annature">
 		<h4>Annature</h4>
 		<p>Use Annature ID Verification with OnboardMe.</p>
@@ -312,13 +305,13 @@
 		  </div>
 		</div>
 
-      <!-- QBO -->
+      <!-- Kloud Connect -->
       <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="qbo" data-countries="all" data-comingsoon="true">
+        <div class="integration-card h-100" data-integration="kc" data-countries="au,nz" data-comingsoon="true">
           <span class="badge-comingsoon">Coming Soon</span>
-          <img src="img/QBO.png" alt="QBO">
-          <h4>Quickbooks Online</h4>
-          <p>Sync Clients, Billings and Payments between QuickBooks Online and OnboardMe.</p>
+          <img src="img/KC Logo.png" alt="KC">
+          <h4>Kloud Connect</h4>
+          <p>Sync Clients, Billings and Payments between Kloud Connectand OnboardMe.</p>
         </div>
       </div>
     </div>
@@ -350,9 +343,6 @@
         <h1 class="fw-bold mb-2 text-lg">
           <span class="text-gradient">Identity&nbsp;Verification</span> 
         </h1>
-		<h5>
-		Powered&nbsp;by&nbsp;Stripe
-		</h5>
       </div>
 	 
 
@@ -400,6 +390,7 @@
 </section>
 <!-- End Identity Verification Hero -->
 
+
      <!-- Features banner -->
       <div class="features-banner">
         <div class="section-title text-center"><h2 style="font-size:3rem;">Features included in all  plans</h2></div>
@@ -420,6 +411,21 @@
         </ul>
       </div>
 
+
+<div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
+  <a href="https://link.onboardme.app/website-register"
+     class="cta-button"
+     target="_blank">
+    Start a 1 month free trial
+  </a>
+  <span class="align-self-center fw-bold">OR</span>
+  <a href="https://forms.cloud.microsoft/r/ApuawA11Rv"
+     class="cta-button"
+     target="_blank">
+    Book a Demo
+  </a>
+</div>
+  </div>
 
 <!-- ======= Pricing Section ======= -->
   <div class="container">
@@ -454,28 +460,28 @@
           <h3>Starter</h3>
           <p class="requests">30 Requests per month</p>
           <p class="price">$59</p>
-          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+          <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
         </div>
 
         <div class="option" id="rockstar">
           <h3>Pro</h3>
           <p class="requests">70 Requests per month</p>
           <p class="price">$99</p>
-          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+          <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
         </div>
 
         <div class="option" id="mvp">
           <h3>Expert</h3>
           <p class="requests">150 Requests per month</p>
           <p class="price">$199</p>
-          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+          <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
         </div>
 
         <div class="option" id="icon">
           <h3>Ultimate</h3>
           <p class="requests">300 Requests per month</p>
           <p class="price">$299</p>
-          <a href="https://anz.onboardme.app/?register=1" class="btn" target="_blank">Get Onboard</a>
+          <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
         </div>
 
       </div>
@@ -685,12 +691,12 @@ const integrationDetails = {
       "Auto‑file signed engagements and onboarding forms."
     ]
 	},
-	"qbo": {
-    title   : "QuickBooks Online Integration",
+	"kc": {
+    title   : "Kloud Connect Integration",
     bullets : [
       "Two‑way sync of client information.",
       "Create invoices from Accepted Engagements",
-      "Auto reconcile payments via Pinch Payments."
+      "Create and deploy Jobs from Accepted Engagements"
     ]
   }
 };
