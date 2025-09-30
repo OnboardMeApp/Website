@@ -379,7 +379,24 @@ body {
   width:max-content;
 }
 #hero .list-unstyled li { text-align:left; }
-#hero h1 { margin-bottom:2rem; }
+#hero h1 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1.2;
+}
+
+/* Keep the intro phrase on a single line, and scale it a bit on smaller screens */
+#hero .hero-prefix {
+  white-space: normal;   /* allow it to wrap naturally */
+  display: inline;       /* inline, so it participates in centering */
+}
+
+/* optional: nudge size down slightly on smaller screens so it still fits */
+@media (max-width: 992px){
+  #hero .hero-prefix{ font-size: .95em; }
+}
+@media (max-width: 576px){
+  #hero .hero-prefix{ font-size: .9em; }
+}
 
 /* Make hero check icons OnboardMe orange */
 #hero .list-unstyled li i { color:#993260!important; }
@@ -601,4 +618,77 @@ html, body {
 
 /* Optional: hide old hard-coded badge if you haven't removed it */
 .integration-card .badge-comingsoon { display:none; }
+
+/* Setup assistance cards inside Pricing */
+.pricing-table .setup-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;              /* a bit more gap since cards are wider */
+  margin-top: 16px;
+}
+
+.pricing-table .option.option--addon {
+  flex: 1 1 300px;        /* allow flexible growth but base width ~300px */
+  max-width: 340px;       /* gives enough room for text to sit on one line */
+  position: relative;
+}
+
+/* Text forced to white */
+.pricing-table .option.option--addon,
+.pricing-table .option.option--addon h3,
+.pricing-table .option.option--addon .price,
+.pricing-table .option.option--addon p,
+.pricing-table .option.option--addon li {
+  color: #fff !important;
+}
+
+/* Feature list */
+.pricing-table .option.option--addon .features li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.pricing-table .option.option--addon .features i {
+  color: #7b2350;
+  margin-top: 3px;
+}
+
+/* Remove “Most popular” styling */
+.pricing-table .option.option--popular {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.pricing-table .popular-pill {
+  display: none !important;
+}
+
+/* Subtitle under Setup assistance */
+.setup-addons .section-title p {
+  color: #fff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .pricing-table .option.option--addon {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.pricing-table .option.option--addon .features li {
+  display: flex;
+  align-items: center;   /* ensures icon and text align vertically */
+  gap: 8px;              /* adds consistent spacing between icon and text */
+  margin-bottom: 10px;
+  line-height: 1.4;      /* keeps multi-line text consistent */
+}
+
+.pricing-table .option.option--addon .features i {
+  flex-shrink: 0;        /* prevents icon from squishing */
+  font-size: 1rem;       /* keep icon size consistent */
+  margin: 0;             /* remove top margin that caused offset */
+  align-self: center;    /* force center alignment explicitly */
+}
+
   </style>
