@@ -233,7 +233,7 @@
       <select id="country-integrations" class="country-select" onchange="updatePricesAndCharges()">
         <option value="AUD" selected>Australia</option>
         <option value="NZD">New Zealand</option>
-        <option value="ZAR">South Africa</option>
+       <!-- <option value="ZAR">South Africa</option> -->
       </select>
     </div>
 
@@ -276,14 +276,7 @@
 	  </div>
 	</div>
 
-      <!-- LodgeiT -->
-      <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="lodge-it" data-countries="au, nz">
-          <img src="img/Lodgeit_Logo.png" alt="LodgeiT">
-          <h4>LodgeiT</h4>
-          <p>Export clients to LodgeiT from OnboardMe.</p>
-        </div>
-      </div>
+
 
 
 
@@ -293,6 +286,25 @@
           <img src="img/Greatsoft_logo.png" alt="GreatSoft">
           <h4>GreatSoft</h4>
           <p>Sync Clients, Tasks and Billing between GreatSoft and OnboardMe.</p>
+        </div>
+      </div>
+	  
+	     <!-- Kloud Connect -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="kc" data-countries="au,nz" >
+          
+          <img src="img/KC Logo.png" alt="KC">
+          <h4>Kloud Connect</h4>
+          <p>Sync Clients, Billings and Payments between Kloud Connect and OnboardMe.</p>
+        </div>
+      </div>
+	  
+	        <!-- LodgeiT -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="lodge-it" data-countries="au, nz">
+          <img src="img/Lodgeit_Logo.png" alt="LodgeiT">
+          <h4>LodgeiT</h4>
+          <p>Export clients to LodgeiT from OnboardMe.</p>
         </div>
       </div>
 
@@ -305,16 +317,22 @@
 		  </div>
 		</div>
 
-      <!-- Kloud Connect -->
+   
+	  
+	  
+	   <!-- Karbon -->
       <div class="col-lg-3 col-md-6">
-        <div class="integration-card h-100" data-integration="kc" data-countries="au,nz" data-status="development">
+        <div class="integration-card h-100" data-integration="karbon" data-countries="au,nz" data-status="development">
           
-          <img src="img/KC Logo.png" alt="KC">
-          <h4>Kloud Connect</h4>
-          <p>Sync Clients, Billings and Payments between Kloud Connectand OnboardMe.</p>
+          <img src="img/Karbon.png" alt="Karbon">
+          <h4>Karbon</h4>
+          <p>Sync Clients, Billings, Documents and Payments between Karbon and OnboardMe.</p>
         </div>
       </div>
     </div>
+    </div>
+	
+	
 
     <!-- Xero Connected App (centered & after all integrations) -->
    <div class="row mt-5">
@@ -444,7 +462,7 @@
         onchange="updatePricesAndCharges()">
 		  <option value="AUD" selected>Australia</option>
 		  <option value="NZD">New Zealand</option>
-		  <option value="ZAR">South Africa</option>
+		 <!-- <option value="ZAR">South Africa</option> -->
 		</select>
         <div class="billing-toggle d-inline-flex align-items-center ms-3">
           <input type="radio" id="monthly"   name="billing" value="monthly"  checked onchange="updatePricesAndCharges()"><label for="monthly">Monthly</label>
@@ -681,73 +699,81 @@ const requestsPerPlan={starter:30,pro:70,expert:150,ultimate:300};
 /* ------------- Integration modal bullet copy ---------------- */
 const integrationDetails = {
   "xero-pm": {
-    title   : "Xero Practice Manager Integration",
-    bullets : [
-      "Two‑way sync of client information.",
-      "Two‑way sync of family group information.",
+    title: "Xero Practice Manager Integration",
+    bullets: [
+      "Two-way sync of client information.",
+      "Two-way sync of family group information.",
       "Create Jobs and Tasks from Engagements.",
       "Invoices paid upfront synced automatically."
     ]
   },
   "xero-ledger": {
-    title   : "Xero Ledger Integration",
-    bullets : [
-      "Two‑way sync of client information.",
-      "Raise invoices & payments without re‑keying.",
+    title: "Xero Ledger Integration",
+    bullets: [
+      "Two-way sync of client information.",
+      "Raise invoices & payments without re-keying.",
       "Map Sales Items and Tax Rates to Engagement Services to keep GL codes right."
     ]
   },
   "myob-pm": {
-    title   : "MYOB Practice Management Integration",
-    bullets : [
-      "Two‑way sync of client information.",
+    title: "MYOB Practice Management Integration",
+    bullets: [
+      "Two-way sync of client information.",
       "Map and create Tasks from Engagement Services.",
-      "Create Billings from paid Pro‑forma Invoices."
+      "Create Billings from paid Pro-forma Invoices."
     ]
   },
-    "lodge-it": {
-    title   : "LodgeiT",
-    bullets : [
-      "Export newly onboading clients from OnboardMe to export into LodgeiT.",
+  "lodge-it": {
+    title: "LodgeiT",
+    bullets: [
+      "Export newly onboarding clients from OnboardMe to export into LodgeiT."
     ]
   },
   "myob-ar": {
-    title   : "MYOB Business / AccountRight Integration",
-    bullets : [
+    title: "MYOB Business / AccountRight Integration",
+    bullets: [
       "Create ledgers and contacts directly from onboarding.",
       "Send invoices & payment links that reconcile automatically.",
-      "Support for multi‑branch setups."
+      "Support for multi-branch setups."
     ]
   },
   "greatsoft": {
-    title   : "GreatSoft Integration",
-    bullets : [
-      "One‑click creation of clients and groups.",
+    title: "GreatSoft Integration",
+    bullets: [
+      "One-click creation of clients and groups.",
       "Sync engagement fees into GreatSoft billing.",
       "Create Tasks based on Engagement Services accepted."
     ]
   },
-   "annature": {
-    title   : "Annature Integration",
-    bullets : [
+  "annature": {
+    title: "Annature Integration",
+    bullets: [
       "Use OnboardMe's engagement and Onboarding engine, with Annature ID Verification.",
-	  "Create ID Verifications in Annature from OnboardMe.",
+      "Create ID Verifications in Annature from OnboardMe."
     ]
   },
   "fyi": {
-    title   : "FYI Integration",
-    bullets : [
-      "Two‑way sync of client information.",
+    title: "FYI Integration",
+    bullets: [
+      "Two-way sync of client information.",
       "Create invoices and payments (via Xero Ledger).",
-      "Auto‑file signed engagements and onboarding forms."
+      "Auto-file signed engagements and onboarding forms."
     ]
-	},
-	"kc": {
-    title   : "Kloud Connect Integration",
-    bullets : [
-      "Two‑way sync of client information.",
+  },
+  "kc": {
+    title: "Kloud Connect Integration",
+    bullets: [
+      "Two-way sync of client information.",
       "Create invoices from Accepted Engagements",
       "Create and deploy Jobs from Accepted Engagements"
+    ]
+  },
+  "karbon": {
+    title: "Karbon Integration",
+    bullets: [
+      "Two-way sync of client information.",
+      "Create invoices and payments.",
+      "Auto-file signed engagements and onboarding forms."
     ]
   }
 };
