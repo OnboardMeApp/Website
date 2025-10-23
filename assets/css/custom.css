@@ -48,7 +48,7 @@ body {
   padding: 15px 30px;
   font-size: 18px;
   color: #fff;
-  background-color: #F6612A;
+  background-color: #993260;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -66,12 +66,21 @@ body {
 .cta-button:hover,
 .pricing-table .pricing-options .option .btn:hover,
 #hero .btn:hover {
-  background-color: #fa5252;
+  background-color: #7b2350;
   transform: scale(1.05);
 }
 
 .cta-button:hover {
   color: #fff !important;   /* or inherit;  the !important beats any other rule */
+}
+
+/* Keep login button orange */
+#header .cta-button {
+  background-color: #F6612A !important;
+}
+
+#header .cta-button:hover {
+  background-color: #fa5252 !important;
 }
 
 /* ---------- Header & Site Logo ---------- */
@@ -282,7 +291,7 @@ body {
 
 .custom-plan-cta          { text-align:center; margin-top:40px; }
 .custom-plan-cta p        { font-size:1.2rem; margin-bottom:20px; }
-.custom-plan-cta .cta-button:hover { background-color:#d9551f; }
+.custom-plan-cta .cta-button:hover { background-color:#7b2350; }
 
 /* ======================================================
    FEATURES BANNER
@@ -318,9 +327,23 @@ body {
   box-sizing:border-box; /* so padding+border stay inside 200 px */
 }
 
-/* Optional: make them full-width only on very small screens */
-@media (max-width: 575.98px) {
-  .feature-item { width: 100%; }
+/* Mobile: one feature per line */
+@media (max-width: 768px) {
+  .features-banner .list-unstyled-new.row {
+    flex-direction: column !important;
+  }
+  
+  .features-banner .list-unstyled-new.row > li {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .feature-item { 
+    width: 100% !important; 
+    max-width: 100% !important;
+    margin: 0 0 1rem 0 !important;
+  }
 }
 .feature-item:hover {
   transform:scale(1.05);
@@ -595,6 +618,95 @@ html, body {
   #identity-hero img { max-width: 420px; }
 }
 
+/* Mobile responsiveness for Stripe image */
+@media (max-width: 768px) {
+  #identity-hero img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 15px;
+  }
+  
+  /* Adjust the container padding on mobile */
+  #identity-hero .col-lg-6 .p-4 {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #identity-hero img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 10px;
+  }
+  
+  /* Further reduce container padding on small mobile */
+  #identity-hero .col-lg-6 .p-4 {
+    padding: 1rem !important;
+  }
+  
+  /* Ensure proper spacing between image and text */
+  #identity-hero .col-lg-6 .p-4 h3 {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  #identity-hero .col-lg-6 .p-4 p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure bullet points are left-aligned on mobile */
+@media (max-width: 768px) {
+  #identity-hero .deliverables {
+    text-align: left !important;
+  }
+  
+  #identity-hero .deliverables .list-unstyled {
+    text-align: left !important;
+  }
+  
+  #identity-hero .deliverables .list-unstyled li {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Fix bullet point icon alignment to align with first line of text */
+#identity-hero .deliverables .list-unstyled li {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+#identity-hero .deliverables .list-unstyled li i {
+  flex-shrink: 0;
+  margin-top: -0.3em; /* Adjust icons to be slightly higher than text, but not too high */
+  margin-right: 0.5rem;
+}
+
+#identity-hero .deliverables .list-unstyled li {
+  line-height: 1.4;
+}
+
+/* Apply same bullet point positioning to Pinch section */
+#payments-hero .deliverables .list-unstyled li {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+#payments-hero .deliverables .list-unstyled li i {
+  flex-shrink: 0;
+  margin-top: -0.3em; /* Same positioning as identity-hero section */
+  margin-right: 0.5rem;
+}
+
+#payments-hero .deliverables .list-unstyled li {
+  line-height: 1.4;
+}
+
 /* ---------- Integration status badges (data-status) ---------- */
 .integration-card .badge-status{
   position:absolute;
@@ -684,11 +796,40 @@ html, body {
   line-height: 1.4;      /* keeps multi-line text consistent */
 }
 
-.pricing-table .option.option--addon .features i {
-  flex-shrink: 0;        /* prevents icon from squishing */
-  font-size: 1rem;       /* keep icon size consistent */
-  margin: 0;             /* remove top margin that caused offset */
-  align-self: center;    /* force center alignment explicitly */
+  .pricing-table .option.option--addon .features i {
+    flex-shrink: 0;        /* prevents icon from squishing */
+    font-size: 1rem;       /* keep icon size consistent */
+    margin: 0;             /* remove top margin that caused offset */
+    align-self: center;    /* force center alignment explicitly */
+  }
+
+/* Features List - Responsive Grid */
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Mobile: one feature per line */
+@media (max-width: 768px) {
+  .features-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-item { 
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
 }
 
   </style>
