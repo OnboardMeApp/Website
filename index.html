@@ -173,7 +173,7 @@
 
 <!-- ======= Live Demo CTA ======= -->
 <div class="text-center my-4">
-  <p class="mb-3 fs-5">Take a live tour of the engagement and onboarding process</p>
+  <p class="mb-3 fs-5">Take a live tour of what your clients engagement and onboarding experience will look like</p>
   <a href="https://anz.onboardme.app/externalLink?key=b9ff5d7c-f762-4721-99d5-dce75c75bb99"
      class="cta-button cta-button--big"
      target="_blank">
@@ -362,6 +362,33 @@
           <p>Sync Clients, Billings, Documents and Payments between Karbon and OnboardMe.</p>
         </div>
       </div>
+
+      <!-- Microsoft 365 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="microsoft" data-countries="all">
+          <img src="img/Microsoft_365_logo.png" alt="Microsoft 365">
+          <h4>Microsoft 365</h4>
+          <p>Single Sign On and send emails using your business domain.</p>
+        </div>
+      </div>
+
+      <!-- QuickBooks -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="quickbooks" data-countries="all" data-status="comingsoon">
+          <img src="img/QuickBooks_Logo.png" alt="QuickBooks">
+          <h4>QuickBooks</h4>
+          <p>Two-way sync of client information and automated invoice creation.</p>
+        </div>
+      </div>
+
+      <!-- MYOB Business / AccountRight Live -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="myob-ar" data-countries="au,nz" data-status="comingsoon">
+          <img src="img/myob_logo.png" alt="MYOB">
+          <h4>MYOB Business / AccountRight Live</h4>
+          <p>Two-way sync of client information.</p>
+        </div>
+      </div>
     </div>
     </div>
 	
@@ -493,17 +520,17 @@
           <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
         </div>
 
-        <div class="option" id="mvp">
-          <h3>Expert</h3>
-          <p class="requests">150 Requests per month</p>
-          <p class="price">$199</p>
-          <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
-        </div>
-
         <div class="option" id="icon">
           <h3>Ultimate</h3>
           <p class="requests">300 Requests per month</p>
           <p class="price">$299</p>
+          <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
+        </div>
+
+        <div class="option" id="enterprise">
+          <h3>Enterprise</h3>
+          <p class="requests">700 Requests per month</p>
+          <p class="price">$599</p>
           <a href="https://link.onboardme.app/website-register" class="btn" target="_blank">Get Onboard</a>
         </div>
 
@@ -534,7 +561,7 @@
     <!-- Basic -->
     <div class="option option--addon" id="setup-basic">
       <h3>Basic</h3>
-      <p class="price">A$200</p>
+      <p class="price setup-price">A$200</p>
       <ul class="list-unstyled features">
         <li><i class="bi bi-check-circle-fill me-2"></i>1 × 60-minute onboarding call</li>
         <li><i class="bi bi-check-circle-fill me-2"></i>System walkthrough</li>
@@ -546,7 +573,7 @@
     <!-- Technical (Most Popular) -->
     <div class="option option--addon option--popular position-relative" id="setup-technical">
       <h3>Technical</h3>
-      <p class="price">A$500</p>
+      <p class="price setup-price">A$500</p>
       <ul class="list-unstyled features">
         <li><i class="bi bi-check-circle-fill me-2"></i>Everything in Basic</li>
         <li><i class="bi bi-check-circle-fill me-2"></i>2 × additional 60-minute sessions</li>
@@ -558,7 +585,7 @@
     <!-- Expert -->
     <div class="option option--addon" id="setup-expert">
       <h3>Expert</h3>
-      <p class="price">A$1200</p>
+      <p class="price setup-price">A$1200</p>
       <ul class="list-unstyled features">
         <li><i class="bi bi-check-circle-fill me-2"></i>Everything in Technical</li>
         <li><i class="bi bi-check-circle-fill me-2"></i>Full system setup</li>
@@ -739,10 +766,12 @@
 
 <script>
 /* ----------------- static data (unchanged) ------------------- */
-const basePrices={AUD:{starter:59,pro:99,expert:199,ultimate:299},
-                  NZD:{starter:69,pro:109,expert:219,ultimate:329},
-                  ZAR:{starter:599,pro:999,expert:1999,ultimate:2999}};
-const requestsPerPlan={starter:30,pro:70,expert:150,ultimate:300};
+const basePrices={AUD:{starter:59,pro:99,ultimate:299,enterprise:599},
+                  NZD:{starter:69,pro:109,ultimate:329,enterprise:649},
+                  ZAR:{starter:599,pro:999,ultimate:2999}};
+const requestsPerPlan={starter:30,pro:70,ultimate:300,enterprise:700};
+const baseSetupPrices={AUD:{basic:200,technical:500,expert:1200},
+                        ZAR:{basic:200,technical:500,expert:1200}};
 
 /* ------------- Integration modal bullet copy ---------------- */
 const integrationDetails = {
@@ -823,6 +852,21 @@ const integrationDetails = {
       "Create invoices and payments.",
       "Auto-file signed engagements and onboarding forms."
     ]
+  },
+  "microsoft": {
+    title: "Microsoft 365 Integration",
+    bullets: [
+      "Single Sign On (SSO) - Login to OnboardMe using your Microsoft 365 credentials.",
+      "Send emails using your business domain for a professional branded experience."
+    ]
+  },
+  "quickbooks": {
+    title: "QuickBooks Integration",
+    bullets: [
+      "Two-way sync of client information.",
+      "Create invoices automatically in QuickBooks from OnboardMe.",
+      "Get paid upfront - invoices paid upfront synced automatically."
+    ]
   }
 };
 
@@ -854,17 +898,38 @@ function updatePricesAndCharges (country = getSelectedCountry()) {
   const req     = { ...requestsPerPlan };
   let   suffix  = 'requests per month';
 
-  if (period === 'annual')    { Object.keys(prices).forEach(k => prices[k] *= 11); Object.keys(req).forEach(k => req[k] *= 12); suffix = 'requests per year'; }
+  if (period === 'annual')    { 
+    Object.keys(prices).forEach(k => {
+      // Special handling for NZD Enterprise annual pricing
+      if (country === 'NZD' && k === 'enterprise') {
+        prices[k] = 7248;
+      } else {
+        prices[k] *= 11;
+      }
+    });
+    Object.keys(req).forEach(k => req[k] *= 12); 
+    suffix = 'requests per year'; 
+  }
   if (period === 'quarterly') { Object.keys(prices).forEach(k => prices[k] *= 3 ); Object.keys(req).forEach(k => req[k] *= 3 );  suffix = 'requests per quarter'; }
 
   document.querySelector('#starter  .price').textContent  = `${country} ${prices.starter}`;
   document.querySelector('#rockstar .price').textContent  = `${country} ${prices.pro}`;
-  document.querySelector('#mvp      .price').textContent  = `${country} ${prices.expert}`;
   document.querySelector('#icon     .price').textContent  = `${country} ${prices.ultimate}`;
+  
+  // Show/hide Enterprise plan based on country (available for AU and NZ)
+  const enterpriseCard = document.querySelector('#enterprise');
+  if (enterpriseCard) {
+    if (prices.enterprise) {
+      enterpriseCard.style.display = '';
+      document.querySelector('#enterprise .price').textContent = `${country} ${prices.enterprise}`;
+      document.querySelector('#enterprise .requests').textContent = `${req.enterprise} ${suffix}`;
+    } else {
+      enterpriseCard.style.display = 'none';
+    }
+  }
 
   document.querySelector('#starter  .requests').textContent = `${req.starter} ${suffix}`;
   document.querySelector('#rockstar .requests').textContent = `${req.pro} ${suffix}`;
-  document.querySelector('#mvp      .requests').textContent = `${req.expert} ${suffix}`;
   document.querySelector('#icon     .requests').textContent = `${req.ultimate} ${suffix}`;
 
   document.getElementById('aus-charges').style.display = country === 'AUD' ? 'block' : 'none';
@@ -873,6 +938,34 @@ function updatePricesAndCharges (country = getSelectedCountry()) {
   document.getElementById('tax-label').textContent     = country === 'ZAR'
                                                          ? 'All prices exclude VAT'
                                                          : 'All prices exclude GST';
+
+  // Update setup assistance prices
+  const audSetupPrices = baseSetupPrices.AUD;
+  let setupPrices;
+  let currencyPrefix;
+  
+  if (country === 'AUD') {
+    setupPrices = audSetupPrices;
+    currencyPrefix = 'A$';
+  } else if (country === 'NZD') {
+    // NZD prices are 10% higher than AUD, rounded up to nearest dollar
+    setupPrices = {
+      basic: Math.ceil(audSetupPrices.basic * 11 / 10),
+      technical: Math.ceil(audSetupPrices.technical * 11 / 10),
+      expert: Math.ceil(audSetupPrices.expert * 11 / 10)
+    };
+    currencyPrefix = 'NZ$';
+  } else {
+    // ZAR uses same prices as AUD
+    setupPrices = baseSetupPrices[country];
+    currencyPrefix = 'R';
+  }
+  
+  if (setupPrices) {
+    document.querySelector('#setup-basic .setup-price').textContent = `${currencyPrefix}${setupPrices.basic}`;
+    document.querySelector('#setup-technical .setup-price').textContent = `${currencyPrefix}${setupPrices.technical}`;
+    document.querySelector('#setup-expert .setup-price').textContent = `${currencyPrefix}${setupPrices.expert}`;
+  }
 
   updateIntegrations(country);
 }
