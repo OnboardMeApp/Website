@@ -53,8 +53,15 @@
       <div class="navbar-nav mx-auto">
         <a class="nav-link" href="#hero">Home</a>
         <a class="nav-link" href="#detailed-features">Features</a>
-        <a class="nav-link" href="https://anz.onboardme.app/externalLink?key=b9ff5d7c-f762-4721-99d5-dce75c75bb99" target="_blank">Live Demo</a>
-        <a class="nav-link" href="#payments-hero">Payments</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="liveDemoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Live Demo
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="liveDemoDropdown">
+            <li><a class="dropdown-item" href="https://anz.onboardme.app/externalLink?key=b9ff5d7c-f762-4721-99d5-dce75c75bb99" target="_blank">Engagement + Onboarding</a></li>
+            <li><a class="dropdown-item" href="https://anz.onboardme.app/externalLink?key=5842c6c4-308f-4973-b6c9-d9d3e6ec7f6c" target="_blank">eForms</a></li>
+          </ul>
+        </li>
         <a class="nav-link" href="#integrations">Integrations</a>
         <a class="nav-link" href="#pricing">Pricing</a>
         <a class="nav-link" href="#contact">Contact</a>
@@ -132,8 +139,17 @@
       </div>
     </div>
 
-    <!-- Identity Verification -->
+    <!-- eForms -->
     <div class="row align-items-center flex-lg-row-reverse mb-5">
+      <div class="col-lg-6"><a href="img/eForms_completing.png" class="open-image"><img src="img/eForms_completing.png" class="img-fluid shadowbox" alt="eForms"></a></div>
+      <div class="col-lg-6">
+        <h1 class="gradient-heading">eForms</h1>
+        <p>Streamline data collection from clients with automated reminders and a simple, familiar interface that clients already know and use. Make gathering client information effortless with intuitive forms that guide clients through the process.</p>
+      </div>
+    </div>
+
+    <!-- Identity Verification -->
+    <div class="row align-items-center mb-5">
       <div class="col-lg-6"><a href="img/Stripe_OnboardMe.png" class="open-image"><img src="img/Stripe_OnboardMe.png" class="img-fluid shadowbox" alt="Identity Verification"></a></div>
       <div class="col-lg-6">
         <h1 class="gradient-heading">Identity Verification</h1>
@@ -142,7 +158,7 @@
     </div>
 
     <!-- Ethical Letters -->
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center flex-lg-row-reverse mb-5">
       <div class="col-lg-6"><a href="img/EthicalLetter.png" class="open-image"><img src="img/EthicalLetter.png" class="img-fluid shadowbox" alt="Ethical Letters"></a></div>
       <div class="col-lg-6">
         <h1 class="gradient-heading">Ethical Letter (No Professional Objection)</h1>
@@ -151,16 +167,16 @@
     </div>
 
     <!-- Security -->
-    <div class="row align-items-center flex-lg-row-reverse mb-5">
+    <div class="row align-items-center mb-5">
       <div class="col-lg-6"><a href="img/DocumentRequest.png" class="open-image"><img src="img/DocumentRequest.png" class="img-fluid shadowbox" alt="2FA"></a></div>
       <div class="col-lg-6">
         <h1 class="gradient-heading">Document Collection</h1>
-        <p>Gathering documents from new clients or previous accountants is effortless with OnboardMe’s built-in document request feature, included in both onboarding and ethical letter workflows.</p>
+        <p>Gathering documents from new clients or previous accountants is effortless with OnboardMe's built-in document request feature, included in both onboarding and ethical letter workflows.</p>
       </div>
     </div>
 
     <!-- Branding -->
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center flex-lg-row-reverse mb-5">
       <div class="col-lg-6"><a href="img/Branding.png" class="open-image"><img src="img/Branding.png" class="img-fluid shadowbox" alt="Branding"></a></div>
       <div class="col-lg-6">
         <h1 class="gradient-heading">Make it your own</h1>
@@ -173,80 +189,20 @@
 
 <!-- ======= Live Demo CTA ======= -->
 <div class="text-center my-4">
-  <p class="mb-3 fs-5">Take a live tour of what your clients engagement and onboarding experience will look like</p>
-  <a href="https://anz.onboardme.app/externalLink?key=b9ff5d7c-f762-4721-99d5-dce75c75bb99"
-     class="cta-button cta-button--big"
-     target="_blank">
-    Live Demo
-  </a>
+  <p class="mb-3 fs-5">Take a live tour of what your clients engagement, onboarding, and eForms experience will look like</p>
+  <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <a href="https://anz.onboardme.app/externalLink?key=b9ff5d7c-f762-4721-99d5-dce75c75bb99"
+       class="cta-button cta-button--big"
+       target="_blank">
+      Engagement + Onboarding
+    </a>
+    <a href="https://anz.onboardme.app/externalLink?key=5842c6c4-308f-4973-b6c9-d9d3e6ec7f6c"
+       class="cta-button cta-button--big"
+       target="_blank">
+      eForms
+    </a>
+  </div>
 </div>
-
-
-
-<!-- ======= Payments Hero ======= -->
-<section id="payments-hero" class="py-5 text-center text-white">
-  <div class="container">
-    <div class="row g-4">
-
-      <!-- Headline -->
-      <div class="col-12">
-        <h2 class="fw-bold mb-2 text-lg-start">
-          <span class="text-gradient">OnboardMe</span> +
-          <span class="text-gradient">Pinch&nbsp;Payments</span><br>
-          <span class="pinch-subtitle">An Integration built for Real Service Businesses</span>
-        </h2>
-      </div>
-
-      <!-- Intro paragraph (full width) -->
-      <div class="col-12">
-        <p class="lead intro-lead">
-          Onboarding a new client should feel like a win, not a whirlwind of admin.
-          That’s why OnboardMe has partnered with Pinch Payments to combine engagement creation,
-          automated billing, and secure payment collection into a single, powerful flow.
-          This integration is designed for how real businesses work – efficiently,
-          professionally, and with cash-flow in mind.
-        </p>
-      </div>
-
-      <!-- Deliverables list -->
-      <div class="col-lg-6 order-lg-1 order-2 text-md-start deliverables">
-
-        <h3 class="h5 fw-bold mb-3">What This Integration Delivers</h3>
-        <ul class="list-unstyled mb-4">
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Integrated Payment Capture – credit card &amp bank debit in one flow</li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Get Paid On Acceptance – turn proposal sign-off into instant payment</li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Auto-Reconciliation straight into your accounting software</li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Recurring &amp;&nbsp;Upfront Billing – payment plans, split invoices, or bill in full</li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Branded Client Experience – your logo, colours &amp; terms with a secure interface</li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Smart Automation – real-time updates and flexible follow-ups for missed payments</li>
-        </ul>
-      </div>
-
-      <!-- Pinch card -->
-      <div class="col-lg-6 order-lg-2 order-1">
-        <div class="pinch-card p-4 h-100 text-center shadowbox">
-          <img src="img/Pinch-Logo.png" class="img-fluid mb-3" style="max-width:300px" alt="Pinch Payments logo">
-          <!-- <h3 class="h5 fw-bold text-white">Powered by Pinch Payments</h3> -->
-          <p class="mb-0 text-white-50">
-            Our partnership with Pinch delivers bank-level security, best-in-class rates,
-            and instant reconciliation straight into OnboardMe.
-          </p>
-        </div>
-      </div>
-
-    </div><!-- /.row -->
-    
-    <!-- View Pinch Button - Centered across full width -->
-    <div class="text-center mt-4">
-      <a href="https://getpinch.com.au/" class="cta-button"
-         target="_blank" rel="noopener">
-        View Pinch
-      </a>
-    </div>
-    
-  </div><!-- /.container -->
-</section>
-<!-- End Payments Hero -->
 
 
 
@@ -288,8 +244,15 @@
           <p>Create Contacts and push invoices and payments straight from OnboardMe and Pinch Payments.</p>
         </div>
       </div>
-	  
 
+      <!-- Pinch Payments -->
+      <div class="col-lg-3 col-md-6">
+        <div class="integration-card h-100" data-integration="pinch" data-countries="au">
+          <img src="img/Pinch-Logo.png" alt="Pinch Payments">
+          <h4>Pinch Payments</h4>
+          <p>Integrated payment capture with credit card and bank debit, automated billing, and instant reconciliation.</p>
+        </div>
+      </div>
 
       <!-- MYOB Practice Management -->
       <div class="col-lg-3 col-md-6">
@@ -343,7 +306,7 @@
 
       <!-- FYI -->
       <div class="col-lg-3 col-md-6">
-		  <div class="integration-card h-100" data-integration="fyi" data-countries="au,nz" data-status="beta">
+		  <div class="integration-card h-100" data-integration="fyi" data-countries="au,nz">
 			<img src="img/FYI.png" alt="FYI">
 			<h4>FYI</h4>
 			<p>Sync Clients, Billings and autofile documents between OnboardMe and FYI.</p>
@@ -790,6 +753,17 @@ const integrationDetails = {
       "Two-way sync of client information.",
       "Raise invoices & payments without re-keying.",
       "Map Sales Items and Tax Rates to Engagement Services to keep GL codes right."
+    ]
+  },
+  "pinch": {
+    title: "Pinch Payments Integration",
+    bullets: [
+      "Integrated Payment Capture – credit card & bank debit in one flow.",
+      "Get Paid On Acceptance – turn proposal sign-off into instant payment.",
+      "Auto-Reconciliation straight into your accounting software.",
+      "Recurring & Upfront Billing – payment plans, split invoices, or bill in full.",
+      "Branded Client Experience – your logo, colours & terms with a secure interface.",
+      "Smart Automation – real-time updates and flexible follow-ups for missed payments."
     ]
   },
   "myob-pm": {

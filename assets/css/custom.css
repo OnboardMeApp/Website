@@ -1,5 +1,3 @@
-<style>
-
 /* ---------- General ---------- */
 #modalImage {
   display: block;
@@ -84,7 +82,6 @@ body {
 }
 
 /* ---------- Header & Site Logo ---------- */
-#header { }
 #header .site-logo   { margin-bottom: 10px; }
 #header h1           { font-size: 2.5rem; font-weight: 700; }
 #header h2           { font-size: 1.25rem; font-weight: 400; color: #666; }
@@ -121,6 +118,33 @@ body {
   transform: translateY(-2px);
 }
 
+/* Dropdown menu styling */
+#main-nav .dropdown-menu {
+  background-color: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+#main-nav .dropdown-item {
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+#main-nav .dropdown-item:hover,
+#main-nav .dropdown-item:focus {
+  color: #993260 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+#main-nav .dropdown-toggle::after {
+  margin-left: 0.5rem;
+}
+
 /* Mobile navigation */
 @media (max-width: 991.98px) {
   #main-nav .navbar-nav {
@@ -140,6 +164,15 @@ body {
   #main-nav .nav-link:hover {
     transform: none;
     background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  #main-nav .dropdown-menu {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #main-nav .nav-item.dropdown {
+    width: 100%;
   }
 }
 
@@ -342,7 +375,6 @@ body {
 /* ======================================================
    TRANSACTION CHARGES
    ====================================================== */
-.transaction-charges { }
 .charges-container   { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; }
 
 .charges-box {
@@ -430,6 +462,7 @@ body {
 .text-gradient {
   background:linear-gradient(100deg,#993260,#F6612A);
   -webkit-background-clip:text;
+  background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
@@ -511,10 +544,19 @@ body {
   height:100%;
   position:relative;
   cursor:pointer;
+  display: flex;
+  flex-direction: column;
 }
 .integration-card:hover {
   transform:translateY(-6px);
   box-shadow:0 6px 12px rgba(0,0,0,.18);
+}
+
+/* Fixed height container for logo area - ensures text always starts at same position */
+.integration-card > img:first-child,
+.integration-card > i:first-child {
+  flex-shrink: 0;
+  min-height: 60px;  /* 48px logo + 45px margin */
 }
 
 .integration-card i,
@@ -522,17 +564,35 @@ body {
   font-size:48px;
   max-width:100px;
   color:#993260;
-  margin-bottom:15px;
 }
-.integration-card h4 { color:#fff; font-weight:700; margin-bottom:.25rem; }
-.integration-card p  { color:#fff; opacity:.85; font-size:.95rem; line-height:1.4; }
+
+.integration-card h4 { 
+  color:#fff; 
+  font-weight:700; 
+  margin-bottom:.25rem; 
+  margin-top: 0;
+  flex-shrink: 0;
+}
+.integration-card p  { 
+  color:#fff; 
+  opacity:.85; 
+  font-size:.95rem; 
+  line-height:1.4; 
+  flex: 1;
+}
 
 .integration-card img {
-  height: 96px;         /* every logo now sits 96 px tall */
+  height: 48px;         /* consistent height for all logos */
   width: auto;          /* keep aspect-ratio; width expands/shrinks as needed */
-  object-fit: contain;  /* scales down tall logos so nothing is cropped */
+  max-width: 100%;      /* prevent images from overflowing */
+  object-fit: contain;  /* scales images to fit without cropping */
   display: block;       /* removes inline-element whitespace */
-  margin: 0 auto 15px;  /* centres the logo and preserves the original gap */
+  margin: 0 auto 45px;   /* center and add bottom margin for spacing */
+}
+
+/* Xero logos can be wider */
+.integration-card img[src*="Xero"] {
+  max-width: 150px;
 }
 
 /* Badge (merged duplicate) */
@@ -906,5 +966,3 @@ html, body {
     margin: 0;
   }
 }
-
-  </style>
