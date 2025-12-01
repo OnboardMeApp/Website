@@ -217,12 +217,12 @@
       <p class="lead text-white-50">Connect OnboardMe with the practice systems you already use.</p>
     </div>
 
-    <div class="pricing-switch mb-3 text-center" style="display: none;">
-      <label for="country">Select Country:</label>
+    <div class="pricing-switch mb-3 text-center">
+      <label for="country-integrations">Select Country:</label>
       <select id="country-integrations" class="country-select" onchange="updatePricesAndCharges()">
         <option value="AUD" selected>Australia</option>
         <option value="NZD">New Zealand</option>
-       <!-- <option value="ZAR">South Africa</option> -->
+        <option value="ZAR">South Africa</option>
       </select>
     </div>
 
@@ -457,7 +457,7 @@
         onchange="updatePricesAndCharges()">
 		  <option value="AUD" selected>Australia</option>
 		  <option value="NZD">New Zealand</option>
-		 <!-- <option value="ZAR">South Africa</option> -->
+		  <option value="ZAR">South Africa</option>
 		</select>
         <div class="billing-toggle d-inline-flex align-items-center ms-3">
           <input type="radio" id="monthly"   name="billing" value="monthly"  checked onchange="updatePricesAndCharges()"><label for="monthly">Monthly</label>
@@ -731,10 +731,10 @@
 /* ----------------- static data (unchanged) ------------------- */
 const basePrices={AUD:{starter:59,pro:99,ultimate:299,enterprise:599},
                   NZD:{starter:69,pro:109,ultimate:329,enterprise:649},
-                  ZAR:{starter:599,pro:999,ultimate:2999}};
+                  ZAR:{starter:599,pro:999,ultimate:2999,enterprise:5999}};
 const requestsPerPlan={starter:30,pro:70,ultimate:300,enterprise:700};
 const baseSetupPrices={AUD:{basic:200,technical:500,expert:1200},
-                        ZAR:{basic:200,technical:500,expert:1200}};
+                        ZAR:{basic:2000,technical:5000,expert:10000}};
 
 /* ------------- Integration modal bullet copy ---------------- */
 const integrationDetails = {
