@@ -7,6 +7,10 @@
   <meta name="description" content="Focus on what matters with effortless & affordable Engagements, Payments & Onboarding. Less admin, more time for what you love doing.">
   <meta name="keywords" content="Client Onboarding, Engagements, Payments">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
   <!-- Icons & fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,600,700">
@@ -18,6 +22,24 @@
   <!-- Template & custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- Custom tooltip styles -->
+  <style>
+    .request-tooltip .tooltip-inner {
+      background-color: #F6612A;
+      color: white;
+      max-width: 350px;
+      text-align: left;
+      padding: 12px 15px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .request-tooltip .tooltip-arrow::before {
+      border-top-color: #F6612A;
+    }
+    /* Slightly tighter vertical spacing across sections */
+    .py-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  </style>
 
 </head>
 
@@ -378,7 +400,7 @@
 
      <!-- Features banner -->
       <div class="features-banner">
-        <div class="section-title text-center"><h2 style="font-size:3rem;">Features included in all  plans</h2></div>
+        <div class="section-title text-center"><h2 style="font-size:2.5rem;">Features included in all  plans</h2></div>
         <ul class="list-unstyled-new features-list">
 
           <li class="feature-item"><i class="fas fa-user-check fa-2x"></i><p>Client Onboarding</p></li>
@@ -410,7 +432,7 @@
 <section id="vendor-lockin" class="py-5 bg-gradient text-white mt-5" style="background: linear-gradient(135deg, #993260, #F6612A);">
   <div class="container">
     <div class="section-title text-center mb-4">
-      <h2 style="font-size:2.5rem; font-weight: 700;">Stuck in a contract with another provider?</h2>
+      <h2 style="font-size:3rem; font-weight: 700;">Stuck in a contract with another provider?</h2>
     </div>
 
     <div class="row justify-content-center">
@@ -499,17 +521,25 @@
 
       </div>
 
-      <!-- Tax & custom plan blurbs -->
-      <div class="custom-plan-cta"><p id="tax-label">All prices exclude GST</p></div>
-      <div class="custom-plan-cta">
-  <p id="request-definition">
-    What is a request? A request is an Engagement, Client Onboarding, eForm or Ethical Letter sent from OnboardMe.
-  </p>
-  <p class="mt-1">
-    <strong>Note:</strong> Each onboarding request allows for up to 5 entities.
-  </p>
-</div>
-      <div id="free-month-label" class="text-center mt-2" style="color:#fa5252;font-weight:bold;font-size:30px">Get 1 month free with an annual subscription</div>
+      <!-- Pricing Info Icon -->
+      <div class="text-center mt-3 mb-3">
+        <button type="button" 
+                class="btn btn-link p-0" 
+                data-bs-toggle="modal" 
+                data-bs-target="#pricingInfoModal"
+                style="color: #ffffff; text-decoration: none; border: none; background: none;">
+          <i class="bi bi-info-circle-fill me-2" style="font-size: 1.5rem;"></i>
+          <span style="font-size: 1.1rem;">Terms & Conditions</span>
+        </button>
+      </div>
+      <div id="free-month-label" class="text-center mt-4 mb-4" style="background: linear-gradient(135deg, #F6612A, #993260); color: white; padding: 12px 20px; border-radius: 12px; max-width: 500px; margin: 0 auto; box-shadow: 0 4px 15px rgba(246, 97, 42, 0.3);">
+        <div style="font-size: 1.75rem; font-weight: 700; margin-bottom: 6px; line-height: 1.2;">
+          <i class="bi  me-2"></i>Get 1 Month Free!
+        </div>
+        <div style="font-size: 1rem; opacity: 0.95;">
+          Save up to <strong id="free-month-savings" style="font-size: 1.1em;">AUD 599</strong> with an annual subscription
+        </div>
+      </div>
       <div class="custom-plan-cta mt-3">
 	  <!-- ======= Setup Assistance (inside Pricing) ======= -->
 <div class="setup-addons mt-5">
@@ -684,6 +714,24 @@
     <div class="modal-content"><div class="modal-body p-0"><img src="" id="modalImage" alt="Expanded image"></div></div>
   </div>
 </div>
+
+<!-- ======= Pricing Info Modal ======= -->
+<div class="modal fade" id="pricingInfoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Terms & Conditions</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-3"><strong>Xero Integrations</strong></p>
+        <p class="mb-4">Xero integrations are only available on the Pro plan and above.</p>
+        <p class="mb-0"><strong id="tax-label-modal">All prices exclude GST</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Pricing Info Modal -->
 </section>
 
 <!-- ======= Scripts ======= -->
@@ -902,16 +950,50 @@ function updatePricesAndCharges (country = getSelectedCountry()) {
     }
   }
 
-  document.querySelector('#starter  .requests').textContent = `${req.starter} ${suffix}`;
-  document.querySelector('#rockstar .requests').textContent = `${req.pro} ${suffix}`;
-  document.querySelector('#icon     .requests').textContent = `${req.ultimate} ${suffix}`;
+  // Update requests with hoverable "Requests" word with tooltip
+  const requestTooltipText = '<strong>What is a request?</strong><br>A request is an Engagement, Client Onboarding, eForm or Ethical Letter sent from OnboardMe.<br><br><strong>Note:</strong> Each onboarding request allows for up to 5 entities.';
+  
+  const updateRequestsText = (element, count, suffix) => {
+    const parts = suffix.split(' ');
+    const requestsWord = parts[0]; // "requests"
+    const rest = parts.slice(1).join(' '); // "per month" or "per year" etc.
+    const span = document.createElement('span');
+    span.className = 'requests-link';
+    span.setAttribute('data-bs-toggle', 'tooltip');
+    span.setAttribute('data-bs-html', 'true');
+    span.setAttribute('data-bs-placement', 'top');
+    span.setAttribute('data-bs-trigger', 'hover');
+    span.setAttribute('data-bs-title', requestTooltipText);
+    span.style.cssText = 'cursor: help; text-decoration: underline dotted; color: inherit;';
+    span.textContent = requestsWord;
+    
+    element.innerHTML = `${count} `;
+    element.appendChild(span);
+    element.appendChild(document.createTextNode(` ${rest}`));
+  };
+
+  updateRequestsText(document.querySelector('#starter  .requests'), req.starter, suffix);
+  updateRequestsText(document.querySelector('#rockstar .requests'), req.pro, suffix);
+  updateRequestsText(document.querySelector('#icon     .requests'), req.ultimate, suffix);
+  
+  if (enterpriseCard && prices.enterprise) {
+    updateRequestsText(document.querySelector('#enterprise .requests'), req.enterprise, suffix);
+  }
+  
+  // Initialize tooltips after updating
+  initializeRequestTooltips();
 
   document.getElementById('aus-charges').style.display = country === 'AUD' ? 'block' : 'none';
   document.getElementById('nz-charges').style.display  = country === 'NZD' ? 'block' : 'none';
   document.getElementById('sa-charges').style.display  = country === 'ZAR' ? 'block' : 'none';
-  document.getElementById('tax-label').textContent     = country === 'ZAR'
-                                                         ? 'All prices exclude VAT'
-                                                         : 'All prices exclude GST';
+  
+  // Update tax label in modal
+  const taxLabelModal = document.getElementById('tax-label-modal');
+  if (taxLabelModal) {
+    taxLabelModal.textContent = country === 'ZAR'
+                                ? 'All prices exclude VAT'
+                                : 'All prices exclude GST';
+  }
 
   // Update setup assistance prices
   const audSetupPrices = baseSetupPrices.AUD;
@@ -941,7 +1023,43 @@ function updatePricesAndCharges (country = getSelectedCountry()) {
     document.querySelector('#setup-expert .setup-price').textContent = `${currencyPrefix}${setupPrices.expert}`;
   }
 
+  // Update "Get 1 month free" savings amount
+  // Use base monthly price (not adjusted for billing period)
+  const baseMonthlyPrices = basePrices[country];
+  const savingsElement = document.getElementById('free-month-savings');
+  if (savingsElement && baseMonthlyPrices.enterprise) {
+    // The savings is one month of the Enterprise plan price
+    savingsElement.textContent = `${country} ${baseMonthlyPrices.enterprise}`;
+  } else if (savingsElement) {
+    // If Enterprise not available, use Ultimate plan
+    savingsElement.textContent = `${country} ${baseMonthlyPrices.ultimate}`;
+  }
+
   updateIntegrations(country);
+}
+
+/* ----------------- initialize request tooltips -------------- */
+function initializeRequestTooltips() {
+  const requestTooltipText = '<strong>What is a request?</strong><br>A request is an Engagement, Client Onboarding, eForm or Ethical Letter sent from OnboardMe.<br><br><strong>Note:</strong> Each onboarding request allows for up to 5 entities.';
+  
+  // Destroy existing tooltips first
+  document.querySelectorAll('.requests-link').forEach(link => {
+    const existingTooltip = bootstrap.Tooltip.getInstance(link);
+    if (existingTooltip) {
+      existingTooltip.dispose();
+    }
+  });
+  
+  // Initialize new tooltips
+  document.querySelectorAll('.requests-link').forEach(link => {
+    new bootstrap.Tooltip(link, {
+      html: true,
+      placement: 'top',
+      trigger: 'hover',
+      customClass: 'request-tooltip',
+      title: requestTooltipText
+    });
+  });
 }
 
 /* ----------------- keep dropdowns in sync ------------------- */
