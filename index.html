@@ -56,11 +56,11 @@
 
     <!-- Login button (hidden on mobile) -->
     <div class="d-none d-md-block">
-      <a href="https://anz.onboardme.app"
-         class="cta-button"
-         target="_blank">
+      <button class="cta-button"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal">
         Login
-      </a>
+      </button>
     </div>
   </div>
 </header>
@@ -115,11 +115,11 @@
 
 	
 <div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
-  <a href="https://link.onboardme.app/website-register"
-     class="cta-button"
-     target="_blank">
+  <button class="cta-button"
+          data-bs-toggle="modal"
+          data-bs-target="#trialModal">
     Start a 1 month free trial
-  </a>
+  </button>
   <a href="https://forms.cloud.microsoft/r/ApuawA11Rv"
      class="cta-button"
      target="_blank">
@@ -420,11 +420,11 @@
 
 
 <div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
-  <a href="https://link.onboardme.app/website-register"
-     class="cta-button"
-     target="_blank">
+  <button class="cta-button"
+          data-bs-toggle="modal"
+          data-bs-target="#trialModal">
     Start a 1 month free trial
-  </a>
+  </button>
 </div>
   </div>
   
@@ -682,6 +682,74 @@
   </div>
 </div>
 <!-- End MailerLite Modal -->
+
+<!-- ======= Login Region Modal ======= -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-center w-100">Select Your Region</h5>
+        <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p class="mb-4">Choose your region to log in to OnboardMe</p>
+
+        <div class="d-flex flex-column gap-3">
+          <a href="https://anz.onboardme.app"
+             class="cta-button cta-button--big"
+             target="_blank">
+            Australia & New Zealand
+            <small class="d-block text-white-50 mt-1">anz.onboardme.app</small>
+          </a>
+
+          <a href="https://za.onboardme.app"
+             class="cta-button cta-button--big"
+             target="_blank">
+            South Africa
+            <small class="d-block text-white-50 mt-1">za.onboardme.app</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Login Region Modal -->
+
+<!-- ======= Trial Region Modal ======= -->
+<div class="modal fade" id="trialModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-center w-100">Start Your Free Trial</h5>
+        <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p class="mb-4">Choose your region to start your 1 month free trial</p>
+
+        <div class="d-flex flex-column gap-3">
+          <a href="https://link.onboardme.app/website-register"
+             class="cta-button cta-button--big"
+             target="_blank">
+            Australia & New Zealand
+          </a>
+
+          <a href="https://link.onboardme.app/zawebsitesignup"
+             class="cta-button cta-button--big"
+             target="_blank">
+            South Africa
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Trial Region Modal -->
 
 <!-- ======= Social Links ======= -->
 <div class="social-links text-center mt-4">
